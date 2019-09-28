@@ -1,0 +1,25 @@
+@@include('../components/header.html')
+
+<div class="header-title-wrap">
+    <div class="container">
+        <div class="header-title">
+            <h1 class="header-title__title">Запчасти для котлов</h1>
+            <div class="header-title__subtitle">Найдите запчасть по артикулу, названию котла или бренду</div>
+        </div>
+    </div>
+</div>
+
+@@include('../components/header-search.html', {
+"placeholder": "Поиск запчастей",
+"extra-classes": "header-search--catalog-detail"
+})
+
+@@include('../components/brands-row.html')
+
+<div class="block-margin"></div>
+
+@@include('../components/parts-catalog.html')
+
+<div class="block-margin"></div>
+
+@@include('../components/footer.html')

@@ -1,0 +1,75 @@
+@import "./colors";
+
+.btn {
+  display: inline-block;
+  border-radius: 2px;
+  padding: 15px 29px;
+  cursor: pointer;
+  transition: .2s;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+
+  &--primary {
+    color: #FFFFFF;
+    background: $primary;
+
+    &:hover {
+      background: $primaryHover;
+    }
+  }
+}
+
+.ui-widget.ui-widget-content {
+  max-height: 200px;
+}
+
+li.ui-menu-item {
+  padding: 0;
+
+  &:before {
+    content: none;
+  }
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+  border: none !important;
+  background: #FFF !important;
+  color: #222 !important;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  border: none !important;
+  background: #FFF !important;
+  color: #222 !important;
+}
+
+.ui-menu-item-wrapper {
+  transition: .3s;
+  background: #FFF !important;
+  padding: 5px !important;
+  border: none !important;
+  height: 32px !important;
+  margin: 0 !important;
+  font-weight: 300 !important;
+  font-family: 'PT Sans', sans-serif !important;
+  font-size: 16px !important;
+
+  &:hover {
+    background: #E2F2FC !important;
+  }
+}

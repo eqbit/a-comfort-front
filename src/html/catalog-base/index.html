@@ -1,0 +1,33 @@
+@@include('../components/header.html')
+@@include('../components/header-search.html', {
+	"placeholder": "Поиск оборудования",
+	"extra-classes": ""
+})
+
+<div class="container">
+	<div class="block-title block-title--md-center">Каталог</div>
+</div>
+
+@@include('../components/visual-catalog.html')
+
+<div class="container">
+	<div class="block-title block-title--md-center">
+		Системы отопления <br>
+		и водоснабжения
+	</div>
+	<div class="block-caption block-caption-md-center">
+		Системы отопления и водоснабжения. Оборудование для систем отопления. <br>
+		Оборудование для систем горячего водоснабжения.
+	</div>
+</div>
+
+<div class="container">
+	@@include('../components/catalog-item.html')
+	@@include('../components/catalog-item.html')
+	@@include('../components/catalog-item.html')
+	@@include('../components/catalog-item.html')
+	@@include('../components/catalog-item.html')
+</div>
+
+<div class="block-margin"></div>
+@@include('../components/footer.html')

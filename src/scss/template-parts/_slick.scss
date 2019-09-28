@@ -1,0 +1,88 @@
+@import "../colors";
+@import "../mixins";
+
+.custom-slick-dots {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  z-index: 3;
+
+  ul {
+    display: flex;
+    justify-content: center;
+
+    li {
+      padding: 0;
+      margin: 0 6px;
+
+      &:before {
+        content: none;
+      }
+
+      button {
+        font-size: 0;
+        border: .5px solid #888888;
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        transition: .3s;
+        background: #FFF;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          background: #B5B5B5;
+        }
+      }
+
+      &.slick-active {
+        button {
+          background: $primary;
+          width: 18px;
+        }
+      }
+    }
+  }
+}
+
+.custom-slick {
+  &-arrow {
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 29px);
+    cursor: pointer;
+    border-radius: 50%;
+    height: 58px;
+    width: 58px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.051);
+
+    path {
+      transition: .3s;
+    }
+
+    &:hover {
+      path {
+        stroke: #BF7900;
+      }
+    }
+
+    &--prev {
+      left: -30px;
+
+      @include mq(1199px) {
+        left: 77px;
+      }
+    }
+
+    &--next {
+      right: -30px;
+
+      @include mq(1199px) {
+        right: 77px;
+      }
+    }
+  }
+}

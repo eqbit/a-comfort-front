@@ -1,0 +1,282 @@
+@import "./colors";
+@import "./mixins";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+_:-ms-fullscreen, :root body {
+  display: block;
+}
+
+header, footer {
+  flex: none;
+}
+
+main {
+  flex: 1;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+
+  & + & {
+    margin-top: 1.5em;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 15px;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: currentColor;
+      border-radius: 50%;
+      left: 0;
+      top: 0.65em;
+    }
+  }
+
+  li + li {
+    margin-top: 1.5em;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.block-margin {
+  margin-top: 60px;
+  overflow: hidden;
+
+  @include mq(959px) {
+    margin-top: 40px;
+  }
+
+  @include mq(719px) {
+    margin-top: 30px;
+  }
+}
+
+.margin-row {
+  margin-top: 40px;
+  @include mq(959px, max) {
+    margin-top: 30px;
+  }
+  @include mq(719px, max) {
+    margin-top: 20px;
+  }
+}
+
+.default-title {
+  font-size: 40px;
+  font-weight: bold;
+  @include mq(959px, max) {
+    font-size: 24px;
+    text-align: center;
+  }
+  @include mq(719px, max) {
+    font-size: 20px;
+  }
+  @include mq(479px, max) {
+    font-size: 16px;
+  }
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
+  @include mq(959px, max) {
+    margin-bottom: 40px;
+  }
+  @include mq(719px, max) {
+    margin-bottom: 40px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq(720px, min) {
+    width: 572px;
+    padding: 0;
+  }
+
+  @include mq(960px, min) {
+    width: 820px;
+  }
+
+  @include mq(1200px, min) {
+    width: 1074px;
+  }
+
+  @include mq(1540px, min) {
+    width: 1410px;
+  }
+}
+
+.container-full {
+  @include mq(571px, max) {
+    padding: 0;
+  }
+}
+
+.block-title {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 44px;
+  margin-top: 40px;
+
+  @include mq(1199px) {
+    &--md-center {
+      text-align: center;
+    }
+  }
+
+
+  @include mq(959px) {
+    font-size: 24px;
+    margin-top: 30px;
+    line-height: normal;
+
+    &--tablet-center {
+      text-align: center;
+    }
+  }
+
+  @include mq(719px) {
+    font-size: 16px;
+    margin-top: 20px;
+
+    &--mobile-center {
+      text-align: center;
+    }
+  }
+}
+
+.block-subtitle {
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 10px;
+
+  @include mq(1199px) {
+    &-md-center {
+      text-align: center;
+    }
+  }
+
+  @include mq(959px) {
+    max-width: 70%;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @include mq(719px) {
+    max-width: unset;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &--projects-slider {
+    max-width: 55%;
+  }
+}
+
+.block-caption {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 12px;
+
+  @include mq(719px) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  @include mq(1199px) {
+    &-md-center {
+      text-align: center;
+    }
+  }
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.compensate-for-scrollbar .header-top-wrap {
+  padding-right: 17px;
+}
+
+.page-title {
+  color: #222;
+  font-size: 40px;
+  line-height: normal;
+
+  @include mq(959px) {
+    font-size: 24px;
+  }
+}
+
+#policy {
+  max-width: 600px;
+}
+
+.question-popup {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #E6E6E6;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 3;
+  display: none;
+  box-shadow: 0px 5px 20px rgba(211, 211, 211, 0.445);
+
+  @include mq(719px, max) {
+    padding: 12px;
+    padding-right: 7px;
+  }
+
+}
+
+@import "./template-parts/slick";

@@ -1,0 +1,53 @@
+@import "./mixins";
+@import "./colors";
+@import "./base";
+@import "./ui";
+
+@import "./template-parts/header";
+@import "./template-parts/footer";
+
+@import "./components/header-search";
+
+@import "./components/action-slider";
+@import "./components/brands";
+@import "./components/visual-catalog";
+@import "./components/we-offer";
+@import "./components/calc";
+@import "./components/doc-slider";
+@import "./components/projects-slider";
+
+@import "./components/main-offer";
+@import "./components/bread-crum";
+@import "./components/offer-card";
+
+@import "./components/tabs-contact";
+
+@import "./components/top-product";
+@import "./components/special-offer";
+@import "./components/tabs-feature";
+
+@import "./components/offer-slider";
+
+@import "./components/basket-area";
+@import "./components/basket-item";
+@import "./components/quantity-changer";
+
+@import "./components/projects-grid";
+@import "./components/projects-card";
+
+@import "./components/catalog-item";
+
+@import "./components/checkout";
+
+@import "./components/visual-page-title";
+@import "./components/catalog-category";
+@import "./components/pagination";
+
+@import "./components/brands-row";
+@import "./components/parts-catalog";
+@import "./components/header-title";
+
+@import "./components/project-detail";
+
+@import "./fixes";
+

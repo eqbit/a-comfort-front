@@ -1,0 +1,262 @@
+@import "../mixins";
+
+
+.feature-tabs {
+
+    &__wrapper {
+        padding-top: 50px;
+        @include mq(959px, max) {
+            padding-top: 41px;
+        }
+        @include mq(719px, max) {
+            padding-top: 34px;
+        }
+    }
+    &__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        position: relative;
+        margin: 0px 0 0 -1px;
+        padding-top: 20px;
+        cursor: pointer;
+    }
+
+    &__item {
+        margin: 0;
+        padding: 0;
+        max-width: 50%;
+        text-align: center;
+        padding: 14px 30px;
+        border-top-right-radius: 7px;
+        border-top-left-radius: 7px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            display: none;
+        }
+
+        &-title {
+            width: 190px;
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        @include mq(545px, max) {
+            padding: 14px 12px;
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        margin-top: 48px;
+        padding-bottom: 57px;
+        @include mq(959px, max) {
+            flex-direction: column;
+        }
+        @include mq(719px, max) {
+            padding-bottom: 40px;
+        }
+    }
+
+    &__tab {
+        width: 66%;
+        @include mq(959px, max) {
+            width: 100%;
+        }
+    }
+
+    &__tab-item {
+        margin: 0;
+        padding: 20px 0px 10px 0px;
+        display: flex;
+        border-bottom: 1px solid #F4F4F4;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &--title, &--text {
+            padding-left: 40px;
+            padding-right: 7px;
+            @include mq(1199px, max) {
+                padding-left: 35px;
+            }
+        }
+
+        &--title {
+            font-weight: normal;
+            font-size: 16px;
+            width: 50%;
+            @include mq(959px, max) {
+                padding-left: 34px;
+                padding-right: 0px;
+            }
+            @include mq(719px, max) {
+                width: 65%;
+                padding-left: 15px;
+            }
+
+        }
+
+        &--text {
+            font-size: 16px;
+            width: 50%;
+            @include mq(959px, max) {
+                text-align: right;
+                padding-left: 0px;
+                padding-right: 34px;
+            }
+            @include mq(719px, max) {
+                width: 35%;
+                padding-left: 5px;
+                padding-right: 15px;
+            }
+            
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    &__more-side {
+        margin-left: 150px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        @include mq(1539px, max) {
+            margin-left: 30px;
+        }
+        @include mq(1199px, max) {
+            margin-left: 20px;
+        }
+
+        @include mq(959px, max) {
+            margin-left: 0px;
+            margin-top: 45px;
+        }
+    }
+
+    &__guide {
+        display: block;
+        padding: 20px 20px 40px 20px;
+        width: 330px;
+        border: 1px solid #E6E6E6;
+        color: #000;
+        border-radius: 6px;
+        transition: all 0.4s;
+
+        @include mq(1199px, max) {
+            width: 260px;
+            padding: 22px 22px 22px 22px;
+        }
+
+        @include mq(959px, max) {
+            width: 278px;
+            margin: 0 auto;
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 15px rgba(211, 211, 211, 0.39);
+        }
+
+        &--top-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        &--doc-type {
+
+            display: flex;
+
+            & i {
+
+            }
+
+            & p {
+                margin-left: 14px;
+                opacity: .6;
+            }
+        }
+
+        &--doc-size {
+            opacity: .6;
+        }
+
+        &--description {
+            margin-top: 32px;
+
+            @include mq(1199px, max) {
+                margin-top: 26px;
+            }
+
+            &-text {
+                margin: 0;
+                padding: 0;
+
+                @include mq(959px, max) {
+                    font-size: 14px;
+                    width: 80%;
+                }
+                @include mq(719px, max) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__btn-find {
+        margin: 0 auto;
+        margin-top: 30px;
+        background: #FFA200;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 18px 0px;
+        width: 246px;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgb(150, 149, 149) 0px 15px 30px -18px;
+        cursor: pointer;
+        transition: all 0.4s;
+
+        
+        @include mq(1199px, max) {
+            width: 214px;
+        }
+
+        @include mq(959px, max) {
+            width: 212px;
+            margin-top: 24px;
+        }
+
+        @include mq(719px, max) {
+            width: 210px;
+        }
+
+        &:hover {
+            background: #BF7900;
+            box-shadow: #fff 0px 0px 0px 0px;
+        }
+
+        &--icon {
+            margin-left: 7px;
+        }
+    }
+
+    &__tab {
+
+        &_active {
+            background: #fff
+        }      
+    }
+
+}

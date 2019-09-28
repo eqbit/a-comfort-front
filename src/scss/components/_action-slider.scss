@@ -1,0 +1,108 @@
+@import "../mixins";
+
+.action-slider {
+  position: relative;
+
+  &-wrap {
+    background: #FBF6F1;
+
+    @include mq(1200px, min) {
+      padding-top: 30px;
+    }
+
+    @include mq(1199px) {
+      > .container {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 29px);
+    cursor: pointer;
+    border-radius: 50%;
+    height: 58px;
+    width: 58px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.051);
+
+    @include mq(1199px) {
+      top: unset;
+      bottom: 30px;
+    }
+
+    @include mq(959px) {
+      display: none !important;
+    }
+
+    path {
+      transition: .3s;
+    }
+
+    &:hover {
+      path {
+        stroke: #BF7900;
+      }
+    }
+
+    &--prev {
+      left: -30px;
+
+      @include mq(1199px) {
+        left: 77px;
+      }
+    }
+
+    &--next {
+      right: -30px;
+
+      @include mq(1199px) {
+        right: 77px;
+      }
+    }
+  }
+
+  &-dots {
+    bottom: 30px;
+
+    @include mq(959px) {
+      bottom: 23px;
+    }
+
+    @include mq(713px) {
+      bottom: 15px;
+    }
+  }
+
+  &-slides {
+    &-item {
+      vertical-align: top;
+
+      &__item {
+        height: 450px;
+        overflow: hidden;
+        border-radius: 5px;
+
+        @include mq(1199px) {
+          border-radius: 0;
+        }
+
+        @include mq(959px) {
+          height: 310px;
+        }
+
+        @include mq(719px) {
+          height: 160px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

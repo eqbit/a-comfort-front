@@ -1,0 +1,278 @@
+<div class="container">
+    <div class="catalog-category">
+        <div class="catalog-category__layout">
+            <div class="catalog-category__top">
+                @@include('./pagination.html')
+            </div>
+
+            <div class="block-margin"></div>
+
+            <div class="catalog-category__items">
+                @@include('./catalog-category-element.html')
+                @@include('./catalog-category-element.html')
+                @@include('./catalog-category-element.html')
+                @@include('./catalog-category-element.html')
+                @@include('./catalog-category-element.html')
+                @@include('./catalog-category-element.html')
+                @@include('./catalog-category-element.html')
+                @@include('./catalog-category-element.html')
+                @@include('./catalog-category-element.html')
+            </div>
+
+            <div class="block-margin"></div>
+
+            <div class="catalog-category__bottom">
+                @@include('./pagination.html')
+            </div>
+        </div>
+
+        <div class="catalog-category-filter">
+            <div class="catalog-category-filter-item">
+                <div class="catalog-category-filter-item-head" data-filter-head>
+                    <div class="catalog-category-filter-item-head__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11.807" height="5.397" viewBox="0 0 11.807 5.397">
+                            <path id="Path_128" data-name="Path 128" d="M0,3.011,4.517,0,9.033,3.011" transform="translate(1.387 1)" fill="none" stroke="#ffa200" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+                        </svg>
+                    </div>
+
+                    <div class="catalog-category-filter-item-head__title">По цене</div>
+
+                    <div class="catalog-category-filter-item-head__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22.5" height="14" viewBox="0 0 22.5 14">
+                            <g id="Group_250" data-name="Group 250" transform="translate(1 1)" opacity="0.5">
+                                <line id="Line_85" data-name="Line 85" x2="5.5" fill="none" stroke="#222" stroke-linecap="round" stroke-width="2"/>
+                                <line id="Line_86" data-name="Line 86" x2="11.5" transform="translate(0 6)" fill="none" stroke="#222" stroke-linecap="round" stroke-width="2"/>
+                                <line id="Line_87" data-name="Line 87" x2="20.5" transform="translate(0 12)" fill="none" stroke="#222" stroke-linecap="round" stroke-width="2"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="catalog-category-filter-item__body" style="display: none;">
+                    <div class="catalog-category-filter-sortby">
+                        <div class="catalog-category-filter-sortby__item">По цене</div>
+                        <div class="catalog-category-filter-sortby__item">По новизне</div>
+                        <div class="catalog-category-filter-sortby__item">По рейтингу</div>
+                        <div class="catalog-category-filter-sortby__item">По размеру скидки</div>
+                        <div class="catalog-category-filter-sortby__item">По популярности</div>
+                        <div class="catalog-category-filter-sortby__item">По отзывам</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-category-filter-item">
+                <div class="catalog-category-filter-item-head catalog-category-filter-item-head--filters" data-filter-head>
+                    <div class="catalog-category-filter-item-head__arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11.807" height="5.397" viewBox="0 0 11.807 5.397">
+                            <path id="Path_128" data-name="Path 128" d="M0,3.011,4.517,0,9.033,3.011" transform="translate(1.387 1)" fill="none" stroke="#ffa200" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+                        </svg>
+                    </div>
+
+                    <div class="catalog-category-filter-item-head__title">Фильтры</div>
+                </div>
+
+                <div class="catalog-category-filter-item__body">
+                    <div class="catalog-category-filter-group">
+                        <div class="catalog-category-filter-group__title">Цена</div>
+
+                        <div class="catalog-category-filter-group-unit catalog-category-filter-group-unit--inputrange">
+                            <input type="text"
+                                   placeholder="От 100"
+                                   data-filter-price-from
+                                   class="catalog-category-filter__input">
+
+                            <input type="text"
+                                   placeholder="До 100 000"
+                                   data-filter-price-to
+                                   class="catalog-category-filter__input">
+                        </div>
+                    </div>
+
+                    <div class="catalog-category-filter-group">
+                        <div class="catalog-category-filter-group__title">Типы котлов</div>
+
+                        <div class="catalog-category-filter-group-unit catalog-category-filter-group-unit--checkbox">
+                            <div class="catalog-category-filter-checkbox">
+                                @@include('./filter-checkbox.html', {"name": "Настенные классические газовые", "extra-classes": "inactive"})
+                                @@include('./filter-checkbox.html', {"name": "Настенные конденсационные газовые", "extra-classes": "inactive"})
+                                @@include('./filter-checkbox.html', {"name": "Напольные конденсационные газовые ", "extra-classes": ""})
+                                @@include('./filter-checkbox.html', {"name": "Напольные атмосферные газовые", "extra-classes": "inactive"})
+                                @@include('./filter-checkbox.html', {"name": "Напольные наддувные газовые", "extra-classes": "inactive"})
+                                @@include('./filter-checkbox.html', {"name": "Электрические котлы", "extra-classes": "inactive"})
+                                @@include('./filter-checkbox.html', {"name": "Твердотопливные котлы", "extra-classes": ""})
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-category-filter-group">
+                        <div class="catalog-category-filter-group__title">Бренд</div>
+
+                        <div class="catalog-category-filter-group-unit catalog-category-filter-group-unit--checkbox">
+                            <div class="catalog-category-filter-checkbox">
+                                @@include('./filter-checkbox-quantity.html', {"name": "De Dietrich",
+                                "extra-classes": "",
+                                "quantity": "145"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "SunSystem",
+                                "extra-classes": "",
+                                "quantity": "39"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Kentatsu Furst",
+                                "extra-classes": "",
+                                "quantity": "35"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Protherm",
+                                "extra-classes": "",
+                                "quantity": "28"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Vaillant",
+                                "extra-classes": "",
+                                "quantity": "25"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Эван ",
+                                "extra-classes": "",
+                                "quantity": "2"
+                                })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-category-filter-group">
+                        <div class="catalog-category-filter-group__title">Вид топлива</div>
+
+                        <div class="catalog-category-filter-group-unit catalog-category-filter-group-unit--checkbox">
+                            <div class="catalog-category-filter-checkbox">
+                                @@include('./filter-checkbox-quantity.html', {"name": "Газ",
+                                "extra-classes": "",
+                                "quantity": "143"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Твердое топливо",
+                                "extra-classes": "",
+                                "quantity": "38"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Жидкое топливо",
+                                "extra-classes": "",
+                                "quantity": "27"
+                                })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-category-filter-group">
+                        <div class="catalog-category-filter-group__title">Теплообменник</div>
+
+                        <div class="catalog-category-filter-group-unit catalog-category-filter-group-unit--checkbox">
+                            <div class="catalog-category-filter-checkbox">
+                                @@include('./filter-checkbox-quantity.html', {"name": "Чугунный теплообменник",
+                                "extra-classes": "",
+                                "quantity": "129"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Стальной теплообменник",
+                                "extra-classes": "",
+                                "quantity": "56"
+                                })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-category-filter-group catalog-category-filter-group--hidden" data-extra-filter>
+                        <div class="catalog-category-filter-group__title">Lorem</div>
+
+                        <div class="catalog-category-filter-group-unit catalog-category-filter-group-unit--checkbox">
+                            <div class="catalog-category-filter-checkbox">
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum",
+                                "extra-classes": "",
+                                "quantity": "129"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum Dolor",
+                                "extra-classes": "",
+                                "quantity": "56"
+                                })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-category-filter-group catalog-category-filter-group--hidden" data-extra-filter>
+                        <div class="catalog-category-filter-group__title">Lorem</div>
+
+                        <div class="catalog-category-filter-group-unit catalog-category-filter-group-unit--checkbox">
+                            <div class="catalog-category-filter-checkbox">
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum",
+                                "extra-classes": "",
+                                "quantity": "129"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum Dolor",
+                                "extra-classes": "",
+                                "quantity": "56"
+                                })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-category-filter-group catalog-category-filter-group--hidden" data-extra-filter>
+                        <div class="catalog-category-filter-group__title">Lorem</div>
+
+                        <div class="catalog-category-filter-group-unit catalog-category-filter-group-unit--checkbox">
+                            <div class="catalog-category-filter-checkbox">
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum",
+                                "extra-classes": "",
+                                "quantity": "129"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum Dolor",
+                                "extra-classes": "",
+                                "quantity": "56"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum Dolor",
+                                "extra-classes": "",
+                                "quantity": "56"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum Dolor",
+                                "extra-classes": "",
+                                "quantity": "56"
+                                })
+
+                                @@include('./filter-checkbox-quantity.html', {"name": "Lorem Ipsum Dolor",
+                                "extra-classes": "",
+                                "quantity": "56"
+                                })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="catalog-category-filter-more-filters" data-show-more-filters>
+                        <div class="catalog-category-filter-more-filters__arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11.807" height="5.398" viewBox="0 0 11.807 5.398">
+                                <path id="Path_128" data-name="Path 128" d="M-741.984-16.834l4.516,3.011,4.517-3.011" transform="translate(743.371 18.22)" fill="none" stroke="#ffa200" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+                            </svg>
+                        </div>
+
+                        <div class="catalog-category-filter-more-filters__title">Остальные фильтры</div>
+                    </div>
+
+                    <div class="catalog-category-filter-reset-filters">
+                        <div class="catalog-category-filter-reset-filters__arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13.794" height="6.397" viewBox="0 0 13.794 6.397">
+                                <path id="Path_128" data-name="Path 128" d="M-741.984-16.834l5.5,4,5.5-4" transform="translate(743.381 18.231)" fill="none" stroke="#ffa200" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+                            </svg>
+                        </div>
+
+                        <div class="catalog-category-filter-reset-filters__title">Сбросить фильтры</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

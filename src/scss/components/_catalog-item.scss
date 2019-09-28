@@ -1,0 +1,234 @@
+@import "../colors";
+@import "../mixins";
+
+.catalog-item {
+  background: #E2F2FC;
+  min-height: 230px;
+  padding: 26px 390px 34px 120px;
+  position: relative;
+  transition: 1s;
+  overflow: hidden;
+  border-radius: 5px;
+
+  @include mq(1539px) {
+    padding: 26px 274px 34px 90px;
+  }
+
+  @include mq(1199px) {
+    padding: 25px 250px 25px 70px;
+  }
+
+  @include mq(959px) {
+    padding: 30px 50px;
+    min-height: 130px;
+  }
+
+  @include mq(719px) {
+    padding: 20px 25px 114px;
+  }
+
+  & + & {
+    margin-top: 30px;
+
+    @include mq(1199px) {
+      margin-top: 20px;
+    }
+
+    @include mq(719px) {
+      margin-top: 10px;
+    }
+  }
+
+  &:first-child {
+    margin-top: 25px;
+
+    @include mq(719px) {
+      margin-top: 20px;
+    }
+  }
+
+  &__head {
+    font-size: 24px;
+    font-weight: bold;
+    color: #004058;
+
+    @include mq(959px) {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      padding-right: 160px;
+    }
+
+    @include mq(719px) {
+      height: 40px;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      padding: 0;
+      justify-content: center;
+    }
+  }
+
+  &__body {
+    @include mq(959px) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    width: 210px;
+    right: 120px;
+    top: calc(50% - 28px);
+    position: absolute;
+    opacity: 0;
+
+    @include mq(1539px) {
+      width: 154px;
+      right: 90px;
+    }
+
+    @include mq(1199px) {
+      width: 160px;
+      right: 50px;
+    }
+
+    @include mq(959px) {
+      position: static;
+      opacity: 1;
+      width: 180px;
+      margin-top: 30px;
+    }
+
+    @include mq(719px) {
+      margin: 30px auto 0;
+      display: block;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 270px;
+    height: 170px;
+    right: 90px;
+    bottom: 0;
+    transition: .3s;
+
+    @include mq(1539px) {
+      width: 208px;
+      right: 60px;
+    }
+
+    @include mq(1199px) {
+      width: 160px;
+      height: 127px;
+      right: 50px;
+    }
+
+    @include mq(959px) {
+      height: 120px;
+      right: 35px;
+    }
+
+    @include mq(719px) {
+      height: 100px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 25px;
+
+    @include mq(719px) {
+      margin-top: 10px;
+    }
+
+    &__unit {
+      width: calc(50% - 15px);
+
+      @include mq(719px) {
+        width: 100%;
+      }
+
+      & + & {
+        margin-left: 30px;
+
+        @include mq(719px) {
+          margin: 8px 0 0;
+        }
+      }
+    }
+
+    &__item {
+      color: #444;
+      display: inline-block;
+      transition: .3s;
+
+      @include mq(959px) {
+        font-size: 14px;
+      }
+
+      @include mq(719px) {
+        font-size: 12px;
+        line-height: normal;
+      }
+
+      &-wrap + &-wrap {
+        margin-top: 5px;
+
+        @include mq(959px) {
+          margin-top: 8px;
+        }
+      }
+
+      &:hover {
+        color: lighten(#444, 10);
+      }
+    }
+  }
+
+  @include mq(960px, min) {
+    &:hover {
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.051);
+
+      .catalog-item__img {
+        opacity: .6;
+        bottom: -100px;
+
+        @include mq(1199px) {
+          bottom: -60px;
+        }
+      }
+
+      .catalog-item__btn {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include mq(959px) {
+    &.active {
+      .catalog-item__img {
+        opacity: .6;
+        bottom: -60px;
+      }
+    }
+  }
+
+  @include mq(719px) {
+    transition: .3s;
+
+    &.active {
+      padding-bottom: 60px;
+    }
+  }
+}

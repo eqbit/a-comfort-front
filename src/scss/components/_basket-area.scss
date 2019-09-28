@@ -1,0 +1,254 @@
+@import "../mixins";
+
+.basket-area {
+    display: flex;
+    margin-top: 48px;
+
+    @include mq(959px, max) {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    &__goods-side {
+        width: calc(100% / 12 * 8);
+        max-width: 100%;
+
+        // @include mq(1199px, max) {
+        //     width: calc(100% / 12 * 8);
+        //     max-width: 100%;
+        // }
+
+        @include mq(959px, max) {
+            width: 100%;
+        }
+    }
+
+    &__total-side {
+        margin-left: 30px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        
+        @include mq(1199px, max) {
+            margin-left: 20px;
+        }
+
+        @include mq(959px, max) {
+            margin-left: 0px;
+            margin-top: 50px;
+            width: 66%;
+        }
+
+        @include mq(545px, max) {
+            width: 100%;
+        }
+
+        &--info {
+            background: #FBF6F1;
+            padding: 31px 24px 20px 20px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+
+            @include mq(1199px, max) {
+                padding: 31px 20px 24px 20px;
+            }
+
+            @include mq(959px, max) {
+                padding: 31px 23px 24px 20px;
+            }
+
+            &-gds, &-price {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &-gds {
+
+            }
+
+            &-price {
+                margin-top: 26px;
+            }
+
+            &-privacy {
+                margin-top: 25px;
+                display: flex;
+                align-items: center;
+
+                & input {
+                    margin-left: 0;
+                    margin-right: 10px;
+                    width: 16px;
+                    height: 16px;
+                    cursor: pointer;
+                }
+
+                & a {
+                    color: #000;
+                    margin: 0;
+                    margin-left: 10px;
+                    padding: 0;
+                    font-size: 14px;
+
+                    @include mq(719px, max) {
+                        font-size: 12px;
+                    }
+
+                    & br {
+                        display: none;
+
+                        @include mq(1199px, max) {
+                            display: block;
+                        }
+                        @include mq(959px, max) {
+                            display: none;
+                        }
+                    }
+                    & span {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        &--btn-order {
+            color: #fff;
+            font-size: 18px;
+            padding: 25px 0px 28px 0px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FFA200;
+            cursor: pointer;
+            transition: all 0.4s;
+            box-shadow: rgb(150, 149, 149) 0px 15px 30px -18px;
+
+            @include mq(1199px, max) {
+                font-size: 16px;
+            }
+
+            &:hover {
+                background: #BF7900;
+                box-shadow: rgba(150, 149, 149, 0) 0px 0px 0px 0px;
+            }
+
+            & svg {
+                margin-left: 10px;
+                transform: translateY(2px)
+            }
+        }
+    }
+
+    &__main-title {
+        font-size: 40px;
+
+        @include mq(959px, max) {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        @include mq(719px, max) {
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+
+    &__goods-list {
+        margin: 0;
+        margin-top: 25px;
+    }
+}
+
+.catalog-category-filter-checkbox-box {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    transition: .3s
+}
+
+.catalog-category-filter-checkbox-box input[type=checkbox] {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer
+}
+
+.catalog-category-filter-checkbox-box input[type=checkbox] + span {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    transition: .1s;
+    border: 2px solid #9E9E9E;
+    border-radius: 2px;
+    background: transparent
+}
+
+.catalog-category-filter-checkbox-box input[type=checkbox] + span svg {
+    transition: .3s;
+    opacity: 0
+}
+
+.catalog-category-filter-checkbox-box input[type=checkbox]:checked + span {
+    background: #9E9E9E
+}
+
+.catalog-category-filter-checkbox-box input[type=checkbox]:checked + span svg {
+    opacity: 1
+}
+
+.catalog-category-filter-checkbox-box-parent {
+    display: flex;
+    align-items: center
+}
+
+.catalog-category-filter-checkbox-box-parent + .catalog-category-filter-checkbox-box-parent {
+    margin-top: 15px
+}
+
+.catalog-category-filter-checkbox-box-parent label {
+    font-size: 14px;
+    color: #222;
+    line-height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: .3s
+}
+
+.catalog-category-filter-checkbox-box-parent:not(.inactive):hover .catalog-category-filter-checkbox-box input:not(:checked) + span {
+    border-color: #BF7900
+}
+
+.catalog-category-filter-checkbox-box-parent:not(.inactive):hover label {
+    color: #BF7900
+}
+
+.catalog-category-filter-checkbox-box-parent.inactive {
+    pointer-events: none !important
+}
+
+.catalog-category-filter-checkbox-box-parent.inactive .catalog-category-filter-checkbox-box input + span {
+    border-color: #D6D6D6
+}
+
+.catalog-category-filter-checkbox-box-parent.inactive .catalog-category-filter-checkbox-box input + span svg {
+    display: none
+}
+
+.catalog-category-filter-checkbox-box-parent.inactive label {
+    opacity: .5
+}

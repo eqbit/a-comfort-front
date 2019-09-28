@@ -1,0 +1,132 @@
+.basket-area__goods-item {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #F2F2F2;
+    padding: 20px 20px 26px 15px;
+    transition: all 0.4s;
+
+    @include mq(959px, max) {
+        padding: 18px 19px 23px 15px;
+    }
+
+    @include mq(719px, max) {
+        padding: 12px 15px 9px 15px;
+        flex-direction: column;
+    }
+
+    &:hover {
+        box-shadow:  0px 15px 17px -5px rgba(221, 220, 220, 0.671);
+
+        & .quantity-changer__remove-item {
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        display: none;
+    }
+
+    &--img {
+        margin-right: 15px;
+        // background: lightgrey;
+        width: calc(100% / 12 * 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mq(1539px, max) {
+            width: calc(100% / 12 * 1.5);
+        }
+
+        @include mq(1199px, max) {
+            width: calc(100% / 12 * 2);
+        }
+        
+        @include mq(719px, max) {
+            width: calc(100% / 12 * 1);
+        }
+
+        @include mq(480px, max) {
+            width: calc(100% / 12 * 2);
+        }
+
+        & img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &--about {
+        display: flex;
+
+        @include mq(719px, max) {
+            width: 100%;
+        }
+
+        &-texts {
+            display: flex;
+            flex-direction: column;
+            width: calc(100% / 12 * 4);
+
+            @include mq(1539px, max) {
+                width: calc(100% / 12 * 6);
+            }
+
+            @include mq(1199px, max) {
+                width: calc(100% / 12 * 8);
+            }
+
+            @include mq(719px, max) {
+                width: 210px;
+                max-width: 100%;
+            }
+        }
+
+        &-code {
+            margin: 0;
+            color: #939393;
+            font-size: 14px;
+
+            @include mq(959px, max) {
+                font-size: 12px;
+            }
+        }
+
+        &-name {
+            margin: 0;
+            margin-top: 6px;
+            @include mq(959px, max) {
+                font-size: 14px;
+            }
+
+        }
+    }
+
+    &--quantity {
+
+        @include mq(719px, max) {
+            margin-top: 17px;
+            width: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-price {
+            margin-top: 23px;
+            font-size: 24px;
+            font-weight: bold;
+
+            @include mq(959px, max) {
+                font-size: 16px;
+            }
+
+            @include mq(719px, max) {
+                margin-top: 0px;
+            }
+        }
+    }
+}

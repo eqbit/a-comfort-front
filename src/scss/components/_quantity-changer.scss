@@ -1,0 +1,43 @@
+.quantity-changer {
+    display: flex;
+    align-items: center;
+
+    & * {
+        outline: none;
+    }
+
+    &__btn {
+
+        display: block;
+        width: 36px;
+        height: 36px;
+        border: none;
+        border-radius: 50%;
+        background: #FBF6F1;
+        cursor: pointer;
+        transition: all 0.4s;
+
+        &:hover {
+            box-shadow: 0px 0px 15px rgba(219, 219, 219, 0.671)
+        }
+
+        &_down, &_up {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__total {
+        margin: 0px 8px;
+    }
+
+    &__remove-item {
+        margin-left: 19px;
+        border: 0;
+        background: transparent;
+        opacity: .35;
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+}

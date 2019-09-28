@@ -1,0 +1,55 @@
+.offer-slider {
+    position: relative;
+    // transform: translateX(-2px);
+
+    &__slider-arrow {
+        position: absolute;
+
+        top: calc(50% - 50px);
+        
+        @include mq(959px,max) {
+            display: none;
+        }
+
+        &--prev {
+            left: calc(0% - 40px);
+        }
+
+        &--next {
+            right:  calc(0% - 40px);
+        }
+    }
+
+    & .slick-disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    &__slider-dots {
+        position: static;
+
+        @include mq(959px, max) {
+            margin-top: 15px;
+        }
+
+        @include mq(719px, max) {
+            margin-top: 10px;
+        }
+
+    }
+
+    &__carousel {
+        & .slick-list {
+            padding: 0px 2px;
+
+        }
+
+        & .slick-track {
+            padding-right: 2px;
+            // display: flex;
+        }
+    }
+
+    
+}

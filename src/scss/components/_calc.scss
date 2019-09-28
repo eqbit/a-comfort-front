@@ -1,0 +1,125 @@
+@import "../mixins";
+
+.calc {
+  position: relative;
+  z-index: 1;
+  margin-top: 60px;
+  background: #2B5BA4;
+  padding: 45px 120px;
+  overflow: hidden;
+
+  &-wrap {
+    @include mq(1199px) {
+      background: #2B5BA4;
+    }
+  }
+
+  @include mq(1539px) {
+    padding: 45px 90px;
+  }
+
+  @include mq(1199px) {
+    padding: 45px 0;
+  }
+
+  @include mq(719px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 60px;
+  }
+
+  &__text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFF;
+    line-height: 44px;
+
+    @include mq(959px) {
+      font-size: 24px;
+      line-height: 30px;
+      max-width: 260px;
+
+      br {
+        display: none;
+      }
+    }
+
+    @include mq(719px) {
+      font-size: 16px;
+      line-height: 22px;
+      max-width: 173px;
+    }
+  }
+
+  &-btn {
+    margin-top: 55px;
+
+    @include mq(1539px) {
+      margin-top: 35px;
+    }
+
+    @include mq(959px) {
+      margin-top: 30px;
+    }
+
+    @include mq(719px) {
+      width: 100%;
+    }
+
+    .btn {
+      width: 330px;
+      font-size: 24px;
+      line-height: 34px;
+      padding: 21px;
+
+      @include mq(959px) {
+        font-size: 16px;
+        padding: 18px;
+        line-height: 22px;
+        width: 230px;
+      }
+
+      @include mq(719px) {
+        margin-top: 130px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 450px;
+    right: 120px;
+    top: 0;
+
+    img {
+      width: 100%;
+    }
+
+    @include mq(1539px) {
+      width: 320px;
+      height: 100%;
+      right: 90px;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    @include mq(1199px) {
+      right: 0;
+    }
+
+    @include mq(719px) {
+      bottom: -10px;
+      z-index: -1;
+      width: 300px;
+      height: auto;
+      left: calc(50% - 150px);
+      top: unset;
+      right: unset;
+    }
+  }
+}

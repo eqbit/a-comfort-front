@@ -1,0 +1,93 @@
+@import "../colors";
+@import "../mixins";
+
+.header-search {
+  padding: 40px 120px;
+
+  @include mq(1539px) {
+    padding: 40px 90px;
+  }
+
+  @include mq(1199px) {
+    padding: 40px 70px;
+  }
+
+  @include mq(959px) {
+    padding: 40px 50px;
+  }
+
+  @include mq(719px) {
+    padding: 32px 0;
+  }
+
+  &--catalog-detail {
+    padding-top: 0;
+  }
+
+  &-wrap {
+    background: $secondary;
+  }
+
+  &__field {
+    position: relative;
+    height: 66px;
+
+    @include mq(959px) {
+      height: 56px;
+    }
+
+    @include mq(719px) {
+      height: 50px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding: 14px 27px;
+    border-radius: 5px;
+    border: none;
+
+    @include mq(959px) {
+      padding: 14px 24px;
+    }
+
+    @include mq(719px) {
+      font-size: 14px;
+      padding: 14px 15px;
+    }
+
+    &::placeholder {
+      color: #939393;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    width: 270px;
+    height: 56px;
+    right: 5px;
+    top: 5px;
+
+    @include mq(1539px) {
+      width: 214px;
+    }
+
+    @include mq(1199px) {
+      width: 164px;
+    }
+
+    @include mq(959px) {
+      height: 46px;
+    }
+
+    @include mq(719px) {
+      height: 42px;
+      width: 105px;
+      top: 4px;
+      right: 4px;
+      line-height: 14px;
+    }
+  }
+}

@@ -1,0 +1,248 @@
+
+.contact-tabs {
+
+    line-height: 22px;
+
+    &__main-title {
+        padding-top: 50px;
+        @include mq(545px, max) {
+            padding-top: 30px;
+        }
+    }
+    margin-top: 45px;
+    margin-bottom: 45px;
+    @include mq(959px, max) {
+        margin-bottom: 0;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        position: relative;
+        margin: 45px 0 0 -1px;
+        cursor: pointer;
+        @include mq(545px, max) {
+            margin: 30px 0 0 -1px;
+        }
+    }
+
+    &__item {
+        margin: 0;
+        padding: 0;
+        max-width: 50%;
+        text-align: center;
+        padding: 14px 30px;
+        border-top-right-radius: 7px;
+        border-top-left-radius: 7px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            display: none;
+        }
+
+        &-title {
+            width: 190px;
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        @include mq(545px, max) {
+            padding: 14px 12px;
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        @include mq(959px, max) {
+            flex-direction: column;
+        }
+    }
+
+    &__tab {
+        width: 100%;
+        max-width: 50%;
+        min-height: 580px;
+
+        &_active {
+            background: #fff
+        }
+
+
+        @include mq(959px, max) {
+            flex-direction: column;
+            max-width: 100%;
+            min-height: auto;
+        }
+
+        
+    }
+
+    &__tab-map {
+        width: 50%;
+        margin-left: 30px;
+        @include mq(959px, max) {
+            margin-left: 0px;
+            width: 100%;
+            height: 384px;
+        }
+        @include mq(719px, max) {
+            margin-left: -15px;
+            margin-right: -15px;
+            width: calc(100% + 30px);
+        }
+        @include mq(320px, max) {
+            height: 225px;
+        }
+    }
+
+    &__tab-wrapper {
+
+    }
+
+    &__tab-info {
+        
+        // &_last-on-tab {
+        //     margin-top: 36px;
+        // }
+
+    }
+
+    &__tab-title {
+        font-weight: normal;
+        font-size: 24px;
+        @include mq(719px, max) {
+            font-size: 16px;
+        }
+    }
+
+    &__tab-text {
+        margin-top: 17px;
+        font-size: 16px;
+        width: 480px;
+        max-width: 100%;
+
+        @include mq(959px, max) {
+            width: 100%;
+        }
+        
+        @include mq(719px, max) {
+            font-size: 14px;
+        }
+
+        &_info-br {
+
+            @include mq(959px, max) {
+                display: none;
+            }
+
+        }
+    }
+
+    &__tab-grid {
+
+        &--row {
+            
+            width: 60%;
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            @include mq(1199px, max) {
+                width: 100%;
+            }
+            @include mq(959px, max) {
+                width: 66%;
+            }
+            @include mq(545px, max) {
+                flex-direction: column;
+            }
+
+        }
+
+        &--cell {
+            margin-top: 18px;
+            width: 100%;
+            text-align-last: left;
+
+            &_wrapper {
+                display: flex;
+                justify-content: space-between;
+                @include mq(1199px, max) {
+                    justify-content: flex-start;
+                }
+            }
+
+        }
+
+        &--text {
+
+            margin-top: 0;
+
+            &_transparency {
+                opacity: .6;
+            }
+            &_col-mr {
+                @include mq(1199px, max) {
+                    margin-right: 35px;
+                }
+            }
+        }
+    }
+
+    &__notice {
+        margin-top: 35px;
+        padding-bottom: 20px;
+        display: flex;
+        max-width: 610px;
+        line-height: 20px;
+
+        @include mq(1539px, max) {
+            padding-bottom: 40px;
+        }
+
+        @include mq(1199px, max) {
+            width: 420px;
+        }
+
+        @include mq(959px, max) {
+            width: 80%;
+        }
+        @include mq(719px, max) {
+            width: 100%;
+        }
+
+        &-icon {
+
+        }
+
+        &-text {
+            max-width: 100%;
+            font-size: 14px;
+            padding-left: 20px;
+            @include mq(545px, max) {
+                padding-left: 8px;
+            }
+        }
+
+    }
+}
+
+.contact-tabs__info_last-on-tab {
+    margin-top: 36px;
+    @include mq(959px, max) {
+        margin-bottom: 40px;
+    }
+    @include mq(719px, max) {
+        margin-bottom: 50px;
+    }
+}
+
+.contact-tabs__info_alone-on-tab {
+    margin-top: 0;
+}

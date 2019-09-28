@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="basket-area">
+        <div class="basket-area__goods-side">
+            <h1 class="basket-area__main-title">
+                Корзина
+            </h1>
+            <ul class="basket-area__goods-list">
+                @@include('../components/basket-item.html')
+                @@include('../components/basket-item.html')
+                @@include('../components/basket-item.html')
+            </ul>
+        </div>
+        <div class="basket-area__total-side">
+            <div class="basket-area__total-side--info">
+                <div class="basket-area__total-side--info-gds">
+                    <p>
+                        Вы выбрали
+                    </p>
+                    <span>
+                        3 товара
+                    </span>
+                </div>
+                <div class="basket-area__total-side--info-price">
+                    <p>
+                        На сумму
+                    </p>
+                    <span>
+                        379 000 ₽
+                    </span>
+                </div>
+                <div class="basket-area__total-side--info-privacy">
+                    <!-- <a href="#policy" data-fancybox>
+                                Согласие с <br><span>политикой сбора информации</span>
+                            </a>-->
+                    <label for="box @@name">
+                        <div class="catalog-category-filter-checkbox-box-parent @@extra-classes">
+                            <div class="catalog-category-filter-checkbox-box">
+                                <input type="checkbox" value="@@name" id="box @@name">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10.179" height="7.159"
+                                        viewBox="0 0 10.179 7.159">
+                                        <path id="Path_140" data-name="Path 140"
+                                            d="M242.116-35.548l2.606,2.7,4.744-4.744"
+                                            transform="translate(-240.702 39.011)" fill="none" stroke="#fff"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                            stroke-width="2" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </label>
+                    <a href="#policy" data-fancybox>
+                        Согласие с <br><span>политикой сбора информации</span>
+                    </a>
+                </div>
+            </div>
+            <button class="basket-area__total-side--btn-order">
+                Оформить заказ
+                <svg xmlns="http://www.w3.org/2000/svg" width="6.397" height="13.794" viewBox="0 0 6.397 13.794">
+                    <path id="Path_128" data-name="Path 128" d="M-741.984-16.834l5.5,4,5.5-4"
+                        transform="translate(18.231 -729.587) rotate(-90)" fill="none" stroke="#fff"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="margin-row">
+    </div>
+</div>

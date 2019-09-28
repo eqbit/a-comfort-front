@@ -1,0 +1,367 @@
+@@include('../components/header.html')
+@@include('../components/bread-crum.html')
+
+<div class="container" data-hide-on-success>
+	<div class="block-title">Оформление заказа</div>
+</div>
+
+<div class="container">
+	<form data-checkout-form class="checkout" data-hide-on-success>
+		<div class="checkout__form">
+			<div class="checkout__title">Регион получения</div>
+			
+			<div class="checkout-region checkout__input-parent" data-city-select>
+				<input type="text" name="city" id="city" class="checkout-region__input" data-check-value data-validation="name">
+				<label for="city">Населенный пункт</label>
+				<div class="checkout__input-clear" data-input-clear>
+					<svg xmlns="http://www.w3.org/2000/svg" width="11.314" height="11.314" viewBox="0 0 11.314 11.314">
+						<g id="Group_123" data-name="Group 123" transform="translate(-4.243 5.657) rotate(-45)"
+						   opacity="0.6">
+							<rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="14" rx="1"
+							      transform="translate(6 0)" fill="#222"/>
+							<rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="14" rx="1"
+							      transform="translate(14 6) rotate(90)" fill="#222"/>
+						</g>
+					</svg>
+				</div>
+			</div>
+			
+			<div class="checkout__title">Способ получения</div>
+			
+			<fieldset class="checkout-radio-container">
+				<div class="checkout-radio checkout-radio-type">
+					<input type="radio"
+					       name="delivery-type"
+					       value="Самовывоз"
+					       data-delivery-price="Бесплатно"
+					       checked
+					       data-delivery-type="pickup">
+					<div class="checkout-radio__inner checkout-radio-type__inner">
+						<div class="checkout-radio-type__data">
+							<div class="checkout-radio-type__title">Самовывоз</div>
+							<div class="checkout-radio-type__description">Можно забрать в любом из 3 пунктов</div>
+						</div>
+						
+						<div class="checkout-radio-type__price">Бесплатно</div>
+					</div>
+				</div>
+				
+				<div class="checkout-radio checkout-radio-type">
+					<input type="radio"
+					       name="delivery-type"
+					       value="Доставка из магазина <br>(в пределах Московской области)"
+					       data-delivery-price="900"
+					       data-delivery-type="delivery">
+					<div class="checkout-radio__inner checkout-radio-type__inner">
+						<div class="checkout-radio-type__data">
+							<div class="checkout-radio-type__title">Доставка из магазина (в пределах Московской
+								области)
+							</div>
+							<div class="checkout-radio-type__description">7 дней</div>
+						</div>
+						
+						<div class="checkout-radio-type__price">900 ₽</div>
+					</div>
+				</div>
+				
+				<div class="checkout-radio checkout-radio-type">
+					<input type="radio"
+					       name="delivery-type"
+					       value="Доставка от поставщика. SPSR express"
+					       data-delivery-price="2000"
+					       data-delivery-type="delivery">
+					<div class="checkout-radio__inner checkout-radio-type__inner">
+						<div class="checkout-radio-type__data">
+							<div class="checkout-radio-type__title">Доставка от поставщика. SPSR express</div>
+							<div class="checkout-radio-type__description">2 дня</div>
+						</div>
+						
+						<div class="checkout-radio-type__price">2 000 ₽</div>
+					</div>
+				</div>
+			</fieldset>
+			
+			<div data-pickup>
+				<div class="checkout__title">Пункт самовывоза</div>
+				
+				<fieldset class="checkout-radio-container checkout-radio-container-point">
+					<div class="checkout-radio checkout-radio-type">
+						<input type="radio" name="point" value="Апрелевка">
+						
+						<div class="checkout-radio__inner checkout-radio-point__inner">
+							<div class="checkout-radio-point__name">Апрелевка</div>
+							<div class="checkout-radio-point__address">Г. Апрелевка, ул. Февральская, д. 37</div>
+						</div>
+					</div>
+					
+					<div class="checkout-radio checkout-radio-type">
+						<input type="radio" name="point" value="ТРК Ригамолл">
+						
+						<div class="checkout-radio__inner checkout-radio-point__inner">
+							<div class="checkout-radio-point__name">ТРК Ригамолл</div>
+							<div class="checkout-radio-point__address">Новорижское шоссе, 23-й километр, вл 2, с 1</div>
+						</div>
+					</div>
+					
+					<div class="checkout-radio checkout-radio-type">
+						<input type="radio" name="point" value="ТЦ Горбушка">
+						
+						<div class="checkout-radio__inner checkout-radio-point__inner">
+							<div class="checkout-radio-point__name">ТЦ Горбушка</div>
+							<div class="checkout-radio-point__address">Москва, Багратионовский пр-д, 7</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			
+			<div class="checkout__title">Данные получателя</div>
+			
+			<div class="checkout-inputs">
+				<div class="checkout-inputs-item">
+					<div class="checkout__input-parent required">
+						<input type="text" name="family" id="family" class="checkout-region__input" data-check-value data-validation="name">
+						<label for="family">Фамилия</label>
+						<div class="checkout__input-clear" data-input-clear>
+							<svg xmlns="http://www.w3.org/2000/svg" width="11.314" height="11.314" viewBox="0 0 11.314 11.314">
+								<g id="Group_123" data-name="Group 123" transform="translate(-4.243 5.657) rotate(-45)"
+								   opacity="0.6">
+									<rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="14" rx="1"
+									      transform="translate(6 0)" fill="#222"/>
+									<rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="14" rx="1"
+									      transform="translate(14 6) rotate(90)" fill="#222"/>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
+				
+				<div class="checkout-inputs-item">
+					<div class="checkout__input-parent required">
+						<input type="text" name="name" id="name" class="checkout-region__input" data-check-value data-validation="name">
+						<label for="name">Имя</label>
+						<div class="checkout__input-clear" data-input-clear>
+							<svg xmlns="http://www.w3.org/2000/svg" width="11.314" height="11.314" viewBox="0 0 11.314 11.314">
+								<g id="Group_123" data-name="Group 123" transform="translate(-4.243 5.657) rotate(-45)"
+								   opacity="0.6">
+									<rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="14" rx="1"
+									      transform="translate(6 0)" fill="#222"/>
+									<rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="14" rx="1"
+									      transform="translate(14 6) rotate(90)" fill="#222"/>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
+				
+				<div class="checkout-inputs-item checkout-inputs-item--street" data-delivery data-delivery-required style="display: none;">
+					<div class="checkout__input-parent">
+						<input type="text" name="street" id="street" class="checkout-region__input" data-check-value data-validation="name">
+						<label for="street">Улица</label>
+						<div class="checkout__input-clear" data-input-clear>
+							<svg xmlns="http://www.w3.org/2000/svg" width="11.314" height="11.314" viewBox="0 0 11.314 11.314">
+								<g id="Group_123" data-name="Group 123" transform="translate(-4.243 5.657) rotate(-45)"
+								   opacity="0.6">
+									<rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="14" rx="1"
+									      transform="translate(6 0)" fill="#222"/>
+									<rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="14" rx="1"
+									      transform="translate(14 6) rotate(90)" fill="#222"/>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
+				
+				<div class="checkout-inputs-item checkout-inputs-item--double checkout-inputs-item--house" data-delivery style="display: none;">
+					<div class="checkout__input-parent">
+						<input type="text" name="house" id="house" class="checkout-region__input" data-check-value data-validation="name">
+						<label for="house">Дом</label>
+						<div class="checkout__input-clear" data-input-clear>
+							<svg xmlns="http://www.w3.org/2000/svg" width="11.314" height="11.314" viewBox="0 0 11.314 11.314">
+								<g id="Group_123" data-name="Group 123" transform="translate(-4.243 5.657) rotate(-45)"
+								   opacity="0.6">
+									<rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="14" rx="1"
+									      transform="translate(6 0)" fill="#222"/>
+									<rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="14" rx="1"
+									      transform="translate(14 6) rotate(90)" fill="#222"/>
+								</g>
+							</svg>
+						</div>
+					</div>
+					
+					<div class="checkout__input-parent">
+						<input type="text" name="apartment" id="apartment" class="checkout-region__input" data-check-value data-validation="name">
+						<label for="apartment">Квартира</label>
+						<div class="checkout__input-clear" data-input-clear>
+							<svg xmlns="http://www.w3.org/2000/svg" width="11.314" height="11.314" viewBox="0 0 11.314 11.314">
+								<g id="Group_123" data-name="Group 123" transform="translate(-4.243 5.657) rotate(-45)"
+								   opacity="0.6">
+									<rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="14" rx="1"
+									      transform="translate(6 0)" fill="#222"/>
+									<rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="14" rx="1"
+									      transform="translate(14 6) rotate(90)" fill="#222"/>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
+				
+				<div class="checkout-inputs-item">
+					<div class="checkout__input-parent required">
+						<input type="text" name="email" id="email" class="checkout-region__input" data-check-value data-validation="email">
+						<label for="email">Электронная почта</label>
+						<div class="checkout__input-clear" data-input-clear>
+							<svg xmlns="http://www.w3.org/2000/svg" width="11.314" height="11.314" viewBox="0 0 11.314 11.314">
+								<g id="Group_123" data-name="Group 123" transform="translate(-4.243 5.657) rotate(-45)"
+								   opacity="0.6">
+									<rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="14" rx="1"
+									      transform="translate(6 0)" fill="#222"/>
+									<rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="14" rx="1"
+									      transform="translate(14 6) rotate(90)" fill="#222"/>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
+				
+				<div class="checkout-inputs-item">
+					<div class="checkout__input-parent required">
+						<input type="text" name="phone" id="phone" class="checkout-region__input" data-check-value data-validation="phone" data-phone>
+						<label for="phone">Телефон</label>
+						<div class="checkout__input-clear" data-input-clear>
+							<svg xmlns="http://www.w3.org/2000/svg" width="11.314" height="11.314" viewBox="0 0 11.314 11.314">
+								<g id="Group_123" data-name="Group 123" transform="translate(-4.243 5.657) rotate(-45)"
+								   opacity="0.6">
+									<rect id="Rectangle_50" data-name="Rectangle 50" width="2" height="14" rx="1"
+									      transform="translate(6 0)" fill="#222"/>
+									<rect id="Rectangle_51" data-name="Rectangle 51" width="2" height="14" rx="1"
+									      transform="translate(14 6) rotate(90)" fill="#222"/>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="checkout-info">
+				* - поля обязательные для заполнения, номер телефона и электронная почта используются для оповещений об изменениях статуса заказа.
+			</div>
+			
+			<div class="checkout__title">Способ оплаты</div>
+			
+			<fieldset class="checkout-radio-container checkout-radio-container-point">
+				<div class="checkout-radio checkout-radio-type">
+					<input type="radio" name="payment-type" value="Наличными после доставки" data-payment-type checked>
+					
+					<div class="checkout-radio__inner checkout-radio-point__inner">
+						<div class="checkout-radio-point__name">Наличными после доставки</div>
+						<div class="checkout-radio-point__address">Подготовьте сумму без сдачи</div>
+					</div>
+				</div>
+				
+				<div class="checkout-radio checkout-radio-type">
+					<input type="radio" name="payment-type" value="Онлайн. Банковская карта" data-payment-type>
+					
+					<div class="checkout-radio__inner checkout-radio-point__inner">
+						<div class="checkout-radio-point__name">Онлайн. Банковская карта</div>
+						<div class="checkout-radio-point__address">Visa, Mastercard, Мир</div>
+					</div>
+				</div>
+				
+				<div class="checkout-radio checkout-radio-type">
+					<input type="radio" name="payment-type" value="Онлайн. Робокасса" data-payment-type>
+					
+					<div class="checkout-radio__inner checkout-radio-point__inner">
+						<div class="checkout-radio-point__name">Онлайн. Робокасса</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		
+		<div class="checkout-data">
+			<div class="checkout-data__inner">
+				<div class="checkout-data__top">
+					<div class="checkout-data__title">Состав заказа</div>
+					
+					<div class="checkout-data__items">
+						<div class="checkout-data-item">
+							<div class="checkout-data-item__top">
+								Настенный конденсационный одноконтурный котел
+								De Dietrich Innovens MCA 15
+							</div>
+							<div class="checkout-data-item__bottom">
+								<div class="checkout-data-item-quantity">1 шт.</div>
+								<div class="checkout-data-item-price">116 703 ₽</div>
+							</div>
+						</div>
+						
+						<div class="checkout-data-item">
+							<div class="checkout-data-item__top">
+								Настенный конденсационный одноконтурный котел
+								De Dietrich Innovens MCA 15
+							</div>
+							<div class="checkout-data-item__bottom">
+								<div class="checkout-data-item-quantity">1 шт.</div>
+								<div class="checkout-data-item-price">116 703 ₽</div>
+							</div>
+						</div>
+						
+						<div class="checkout-data-item">
+							<div class="checkout-data-item__top">
+								Настенный конденсационный одноконтурный котел
+								De Dietrich Innovens MCA 15
+							</div>
+							<div class="checkout-data-item__bottom">
+								<div class="checkout-data-item-quantity">1 шт.</div>
+								<div class="checkout-data-item-price">116 703 ₽</div>
+							</div>
+						</div>
+					</div>
+					
+					<a href="/basket" class="checkout-data__back">
+						<svg xmlns="http://www.w3.org/2000/svg" width="13" height="6" viewBox="0 0 13 6">
+							<path id="Path_128" data-name="Path 128" d="M-741.984-16.834l5.5,4,5.5-4" transform="translate(742.984 17.834)" fill="none" stroke="#ffa200" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+						</svg>
+					
+						<span>Изменить</span>
+					</a>
+				</div>
+				
+				<div class="checkout-data-bottom">
+					<div class="checkout-data-bottom-line">
+						<div class="checkout-data-bottom-line__title">Товары (3)</div>
+						<div class="checkout-data-bottom-line__value">379 000 ₽</div>
+					</div>
+					
+					<div class="checkout-data-bottom-line">
+						<div class="checkout-data-bottom-line__title" data-delivery-type-total>Самовывоз</div>
+						<div class="checkout-data-bottom-line__value" data-delivery-price-total>Бесплатно</div>
+					</div>
+					
+					<div class="checkout-data-bottom-line">
+						<div class="checkout-data-bottom-line__title">Способ оплаты</div>
+						<div class="checkout-data-bottom-line__value" data-payment-type-total>Наличными после доставки</div>
+					</div>
+					
+					<div class="checkout-data-bottom-total">
+						<div class="checkout-data-bottom-total__title">Итого к оплате</div>
+						<div class="checkout-data-bottom-total__value" data-total="382000">382 000 ₽</div>
+					</div>
+				</div>
+				
+				<button type="submit" class="checkout-data-btn">Подтвердить</button>
+			</div>
+			
+			<div class="checkout-data__agreement">
+				Нажав «Подтвердить», вы соглашаетесь <br>
+				c <a href="#policy" data-fancybox>условиями использования</a>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="container">
+	<div data-show-on-success></div>
+</div>
+
+<div class="block-margin"></div>
+@@include('../components/footer.html')

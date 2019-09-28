@@ -1,0 +1,11 @@
+.action-slider-slides:not(.slick-initialized) {
+  .action-slider-slides-item:not(:first-child) {
+    display: none;
+  }
+}
+
+.project-detail-slider__carousel:not(.slick-initialized) {
+  .project-detail-slider-slide:not(:first-child) {
+    display: none;
+  }
+}

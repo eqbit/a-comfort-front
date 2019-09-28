@@ -1,0 +1,102 @@
+@import "../mixins";
+
+.we-offer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 35px -15px -15px;
+  justify-content: space-around;
+
+  @include mq(719px) {
+    margin-top: 15px;
+  }
+
+  &-item {
+    width: calc(25% - 30px);
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq(1539px) {
+      @include mq(1200px, min) {
+        width: calc(50% - 30px);
+        padding: 17px 50px;
+        flex-direction: row;
+
+        &:nth-child(2) {
+          svg {
+            transform: translateY(20px);
+          }
+        }
+      }
+    }
+
+    @include mq(1199px) {
+      width: calc(50% - 30px);
+    }
+
+    @include mq(959px) {
+      @include mq(720px, min) {
+        width: 100%;
+        padding: 5px 20px;
+        flex-direction: row;
+
+        &:nth-child(2) {
+          svg {
+            transform: translateY(20px);
+          }
+        }
+      }
+    }
+
+    @include mq(719px) {
+      width: 100%;
+    }
+
+    &__img {
+      height: 115px;
+
+      @include mq(959px) {
+        @include mq(720px, min) {
+          width: 130px;
+        }
+      }
+
+      @include mq(719px) {
+        height: auto;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      margin-top: 25px;
+      color: #222;
+      line-height: 22px;
+
+      @include mq(1539px) {
+        @include mq(1200px, min) {
+          text-align: left;
+          margin-top: 0;
+          margin-left: 55px;
+        }
+      }
+
+      @include mq(959px) {
+        @include mq(720px, min) {
+          text-align: left;
+          margin-top: 0;
+          margin-left: 40px;
+          flex: 1;
+
+          br {
+            display: none;
+          }
+        }
+      }
+
+      @include mq(719px) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

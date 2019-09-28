@@ -1,0 +1,391 @@
+@import "../mixins";
+
+.top-product {
+    margin-top: 63px;
+
+    margin-bottom: 50px;
+
+    @include mq(1023x, max) {
+        margin-top: 53px;
+    }
+
+    @include mq(959px, max) {
+        margin-top: 36px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include mq(545px, max) {
+        margin-top: 23px;
+        margin-bottom: 26px;
+    }
+
+    &__desktop-only {
+        @include mq(959px, max) {
+            display: none;
+        }
+    }
+
+    &__main-wrapper {
+        display: flex;
+        @include mq(719px,max) {
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
+    }
+
+    &__slick-main {
+        position: relative;
+        box-sizing: border-box;
+        width: 33%;
+
+        @include mq(719px,max) {
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        &--item {
+
+            padding-right: 1px;
+
+            &-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #e6e6e6;
+                height: 430px;
+                max-width: 450px;
+                padding: 20px 25px;
+                object-fit: contain;
+
+                @include mq(1549px,max) {
+                    max-width: 340px;
+                }
+
+                @include mq(1199px,max) {
+                    height: 376px;
+                    max-width: 260px;
+                }
+                @include mq(959px, max) {
+                    height: 245px;
+                    max-width: 192px;
+                }
+                @include mq(719px,max) {
+                    display: flex;
+                    max-width: 100%;
+                    min-height: 215px;
+                }
+
+                & img {
+                    box-sizing: border-box;
+                    // max-width: 340px;
+                    max-width: 100%;
+                    max-height: 100%;
+                    margin-right: 2px;
+
+                    @include mq(1199px,max) {
+                        transform: scale(0.9);
+                    }
+
+                    @include mq(959px,max) {
+                        transform: scale(0.8);
+                    }
+
+                    @include mq(719px,max) {
+                        transform: scale(1);
+                    }
+                    
+                } 
+
+            }
+        }
+
+    }
+
+    &__slick-dots {
+        position: relative;
+    }
+
+    &__info {
+        margin-left: 159px;
+        width: calc(77% - 122px);
+        @include mq(1549px,max) {
+            margin-left: 122px;
+        }
+        @include mq(1199px,max) {
+            margin-left: 112px;
+        }
+        @include mq(1023px,max) {
+            margin-left: 90px;
+        }
+        @include mq(959px,max) {
+            margin-left: 63px;
+            width: 100%;
+        }
+        @include mq(719px,max) {
+            margin-left: 0;
+        }
+    }
+
+    &__info-title {
+        margin-top: 20px;
+        font-size: 40px;
+        line-height: 48px;
+        width: 90%;
+
+        @include mq(1539px,max) {
+            width: 100%;
+        }
+
+        @include mq(1199px,max) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        @include mq(1023px,max)  {
+            width: 90%;
+        }
+
+        @include mq(959px,max)  {
+            width: 100%;
+        }
+
+        @include mq(719px,max)  {
+            // width: 100%;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        @include mq(615px,max)  {
+            width: calc(100% / 12 * 10);
+        }
+
+        @include mq(545px,max) {
+
+        }
+
+    }
+
+    &__slick-list {
+        margin-top: 24px;
+        max-width: 100%;
+
+        & * {
+            outline: none !important;
+        }
+
+        @include mq(719px,max) {
+            display: none !important;
+        }
+
+        & .slick-track {
+            margin-left: 0px;
+        }
+
+    }
+
+    &__slick-item {
+        margin: 0;
+        cursor: pointer;
+
+        & img {
+            padding: 5px 10px;
+            border: 1px solid #C4D9D9;
+            width: 62px;
+            height: 62px;
+            object-fit: contain;
+
+        }
+        &::before {
+            display: none;
+        }
+    }
+
+    &__border-line {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border: none;
+        color: #CEE3E3;
+        background-color: #CEE3E3;
+        height: 2px;
+    }
+
+    &__mobile-cell {
+        display: none;
+        @include mq(959px,max) {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+
+        @include mq(719px,max) {
+            margin-top: 15px;        
+        }
+    }
+
+
+    &__info-about {
+        display: flex;
+        position: relative;
+
+        @include mq(719px,max) {
+            margin-top: 20px;        
+        }
+
+        @include mq(545px, max) {
+            font-size: 12px;
+        }
+    }
+
+    &__stock, &__delivery-text {
+        opacity: 0.6;
+    }
+
+    &__delivery {
+        margin-left: 60px;
+        display: flex;
+
+        @include mq(370px, max) {
+            margin-left: 10px;
+        }
+
+        &-popup {
+
+            top: -150%;
+            right: 10%;
+            width: 70%;
+            
+            @include mq(1199px, max) {
+                right: 0%;
+                top: -200%;
+            }
+
+            @include mq(959px, max) {
+                top: -270%;
+                width: 80%;
+            }
+
+            @include mq(384px, max) {
+                width: 90%;
+            }
+
+            h4 {
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin: 0;
+                    margin-right: 10px;
+                }
+            }
+
+            p {
+                margin-top: 8px;
+            }
+        }
+
+        & i {
+            margin-left: 10px;
+            @include mq(545px, max) {
+                margin-left: 7px;
+            }
+        }
+    }
+
+    &__main-btn {
+        margin-top: 20px;
+        color: #fff;
+        background: #FFA200;
+        border: none;
+        padding: 18px 30px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.4s;
+        box-shadow: rgb(150, 149, 149) 0px 15px 30px -18px;
+
+        &:hover {
+            background: #BF7900;
+            box-shadow: #fff 0px 0px 0px 0px;
+        }
+
+        & p {
+           margin-right: 54px; 
+           font-weight: bold;
+           font-size: 24px;
+           position: relative;
+
+           &::before {
+               content: '';
+               position: absolute;
+               background: #fff;
+               height: 42px;
+               width: 1px;
+               right: -27px;
+               top: 0;
+               transform: translate(0%, -20%);
+           }
+
+        }
+
+    }
+
+    &__bottom {
+
+        margin-top: 45px;
+
+        @include mq(1549px, max) {
+            margin-top: 37px;
+        }
+
+        @include mq(1199px, max) {
+            margin-top: 34px;
+        }
+
+        @include mq(1023px, max) {
+            margin-top: 25px;
+        }
+
+        @include mq(959px, max) {
+            margin-top: 40px;
+        }
+
+        @include mq(545px, max) {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        &-info {
+            color: #000;
+
+            &:first-child {
+                margin-right: 46px;
+                
+                @include mq(339px, max) {
+                    margin-right: 33px;
+                }
+            }
+            @include mq(339px, max) {
+                margin-top: 30px;
+                font-size: 14px;
+            }
+        }
+
+        &-angle {
+            margin-left: 10px;
+            @include mq(339px, max) {
+                margin-left: 6px;
+            }
+
+            & svg {
+                transform: rotate(-90deg);
+            }
+        }
+
+    }
+}

@@ -1,0 +1,63 @@
+@import "../colors";
+@import "../mixins";
+
+.visual-page-title {
+  position: relative;
+  padding: 60px 40% 60px 0;
+
+  @include mq(959px) {
+    padding: 30px 33% 30px 0;
+  }
+
+  @include mq(719px) {
+    padding: 30px 0 130px;
+  }
+  
+  &-wrap {
+    background: #E2F2FC;
+  }
+
+  &__text {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include mq(959px) {
+      margin-top: 20px;
+    }
+
+    @include mq(719px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    height: 230px;
+    width: 340px;
+    overflow: hidden;
+    bottom: 0;
+    right: 0;
+
+    @include mq(1199px) {
+      width: 260px;
+      height: 194px;
+    }
+
+    @include mq(959px) {
+      width: 180px;
+      height: 134px;
+    }
+
+    @include mq(719px) {
+      height: 100px;
+      width: 160px;
+      right: calc(50% - 80px);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

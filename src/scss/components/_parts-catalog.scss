@@ -1,0 +1,221 @@
+@import "../colors";
+@import "../mixins";
+
+.parts-catalog {
+  @include mq(1200px, min) {
+    max-width: 75%;
+  }
+
+  &__placeholder {
+    line-height: 22px;
+  }
+
+  &-top-nav {
+    @include mq(959px) {
+      display: none;
+    }
+  }
+
+  &-item {
+    padding: 20px;
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    color: #222;
+    transition: .3s;
+
+    @include mq(959px) {
+      padding: 12px 20px 15px;
+    }
+
+    & + & {
+      border-top: 1px solid #F2F2F2;
+    }
+
+    &__name {
+      flex: 5;
+
+      @include mq(719px) {
+        flex: 8;
+      }
+    }
+
+    &__code {
+      color: rgba(#222, .6);
+      font-size: 14px;
+
+      @include mq(959px) {
+        font-size: 12px;
+      }
+    }
+
+    &__title {
+      color: #222;
+      margin-top: 6px;
+
+      @include mq(959px) {
+        font-size: 14px;
+      }
+    }
+
+    &__mobile-price {
+      font-weight: bold;
+      margin-top: 15px;
+
+      @include mq(720px, min) {
+        display: none;
+      }
+    }
+
+    &__data {
+      flex: 4;
+      margin-left: 30px;
+
+      @include mq(959px) {
+        margin-left: 20px;
+      }
+
+      @include mq(719px) {
+        flex: 4;
+        text-align: right;
+      }
+    }
+
+    &__country {
+      color: rgba(34,34,34,0.6);
+      font-size: 14px;
+
+      @include mq(959px) {
+        font-size: 12px;
+      }
+    }
+
+    &__manufacturer {
+      color: rgba(34,34,34,0.6);
+      margin: 3px 0 0 5px;
+
+      @include mq(959px) {
+        font-size: 14px;
+        margin-left: 0;
+      }
+    }
+
+    &__badge {
+      display: flex;
+      align-items: center;
+      align-self: center;
+
+      @include mq(960px, min) {
+        position: absolute;
+        right: 30px;
+        top: 0;
+        background: #ffffff;
+        height: 100%;
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 200px;
+          height: 100%;
+          top: 0;
+          left: -200px;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+          opacity: 0;
+          transition: .3s;
+        }
+      }
+
+      @include mq(959px) {
+        @include mq(720px, min) {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    &__price {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 28px;
+      transition: .3s;
+
+      @include mq(960px, min) {
+        opacity: .6;
+      }
+
+      @include mq(959px) {
+        font-size: 16px;
+      }
+
+      @include mq(719px) {
+        display: none;
+      }
+    }
+
+    &__basket {
+      @include mq(960px, min) {
+        margin-left: 0;
+        width: 0;
+        height: 0;
+        transition: .3s;
+        border-radius: 50%;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      @include mq(959px) {
+        margin-left: 20px;
+        width: 40px;
+        height: 40px;
+
+        &:focus, &:active {
+          transform: scale(.9);
+          transition: .1s;
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.051);
+        }
+      }
+
+      @include mq(719px) {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    @include mq(960px, min) {
+      &:hover {
+        z-index: 2;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.051);
+
+        .parts-catalog-item__badge {
+          &:before {
+            opacity: 1;
+          }
+        }
+
+        .parts-catalog-item__basket {
+          margin-left: 30px;
+          width: 56px;
+          height: 56px;
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.051);
+
+          &:focus, &:active {
+            transform: scale(.9);
+            transition: .1s;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.051);
+          }
+        }
+
+        .parts-catalog-item__price {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

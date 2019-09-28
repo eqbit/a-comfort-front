@@ -1,0 +1,127 @@
+@import "../colors";
+@import "../mixins";
+
+.brands-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0 40px;
+  margin: -10px;
+
+  @include mq(1539px) {
+    padding-bottom: 24px;
+  }
+
+  @include mq(959px) {
+    margin: -6px;
+  }
+
+  @include mq(719px) {
+    margin: -3px;
+  }
+
+  &__title {
+    border-top: 1px solid #438CC4;
+    padding-top: 20px;
+    color: #FFF;
+    font-size: 24px;
+
+    @include mq(959px) {
+      padding-top: 15px;
+      font-size: 16px;
+    }
+  }
+
+  &-wrap {
+    background: $secondary;
+  }
+
+  &-item {
+    position: relative;
+    margin: 10px;
+
+    @include mq(959px) {
+      margin: 6px;
+    }
+
+    @include mq(719px) {
+      margin: 3px;
+    }
+
+    @include mq(719px) {
+      display: none;
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        display: block;
+      }
+
+      &.visible {
+        display: block;
+      }
+    }
+
+    input {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      margin: 0;
+      z-index: 1;
+      cursor: pointer;
+      opacity: 0;
+
+      + span {
+        color: rgba(#FFF, .8);
+        padding: 8px 32px;
+        background: #2E69C4;
+        border-radius: 28px;
+        text-align: center;
+        transition: .3s;
+        display: block;
+
+        @include mq(959px) {
+          font-size: 14px;
+          padding: 6px 20px;
+        }
+
+        @include mq(719px) {
+          font-size: 14px;
+          padding: 6px 17px;
+        }
+      }
+
+      &:hover {
+        + span {
+          background: #4C85DC;
+          color: #FFF;
+        }
+      }
+
+      &:checked {
+        + span {
+          background: #E2F2FC;
+          color: #222;
+        }
+      }
+    }
+  }
+
+  &-toggle {
+    color: rgba(255,255,255,0.8);
+    padding: 6px 16px;
+    background: #2E69C4;
+    border-radius: 28px;
+    text-align: center;
+    transition: .3s;
+    font-size: 14px;
+    margin: 3px;
+
+    @include mq(720px, min) {
+      display: none;
+    }
+  }
+}

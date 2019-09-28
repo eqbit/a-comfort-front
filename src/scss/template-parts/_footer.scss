@@ -1,0 +1,349 @@
+@import "../colors";
+@import "../mixins";
+
+.footer {
+  background: $secondary;
+  color: #FFF;
+
+  &-form {
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mq(959px) {
+      flex-direction: column;
+      align-items: unset;
+      padding: 30px 0 40px;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 30px;
+
+      @include mq(1199px) {
+        flex: 1;
+
+        br {
+          display: none;
+        }
+      }
+
+      @include mq(959px) {
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 405px;
+      }
+    }
+
+    &-input {
+      flex: 1;
+      margin-left: 160px;
+      position: relative;
+
+      @include mq(1539px) {
+        margin-left: 80px;
+      }
+
+      @include mq(1199px) {
+        width: 400px;
+        flex: unset;
+      }
+
+      @include mq(959px) {
+        width: 100%;
+        margin: 35px 0 0;
+      }
+
+      &__itself {
+        width: 100%;
+        padding: 19px 160px 19px 34px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+
+        @include mq(719px) {
+          padding: 17px 104px 17px 15px;
+          font-size: 14px;
+        }
+      }
+
+      .btn {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+
+        @include mq(719px) {
+          font-size: 14px;
+          padding: 13px 9px;
+        }
+      }
+    }
+  }
+
+  &-desktop-menu {
+    padding: 20px 0 50px;
+    border-top: 1px solid #438CC4;
+    border-bottom: 1px solid #438CC4;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(959px) {
+      display: none;
+    }
+
+    &-item {
+      flex: 1;
+
+      & + & {
+        margin-left: 100px;
+
+        @include mq(1199px) {
+          margin-left: 35px;
+        }
+      }
+
+      &__title {
+        color: #FFF;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 20px;
+        transition: .3s;
+
+        &:hover {
+          color: $whiteHover;
+        }
+      }
+
+      &__subitem {
+        display: block;
+        color: #FFF;
+        opacity: .65;
+        margin-top: 6px;
+        transition: .3s;
+        font-size: 14px;
+
+        &:hover {
+          color: $whiteHover;
+        }
+      }
+    }
+  }
+
+  &-middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+
+    @include mq(959px) {
+      justify-content: flex-end;
+      padding: 10px 0;
+    }
+
+    &-menu {
+      @include mq(959px) {
+        display: none;
+      }
+
+      &__item {
+        color: #FFF;
+        transition: .3s;
+
+        & + & {
+          margin-left: 44px;
+        }
+
+        &:hover {
+          color: $whiteHover;
+        }
+      }
+    }
+
+    &__search {
+      cursor: pointer;
+
+      ellipse, line {
+        transition: .3s;
+      }
+
+      &:hover {
+        ellipse, line {
+          stroke: $whiteHover;
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    padding: 25px 0;
+    border-top: 1px solid #438CC4;
+    display: flex;
+    position: relative;
+
+    @include mq(959px) {
+      padding: 15px 0;
+    }
+
+    @include mq(719px) {
+      padding: 25px 0;
+    }
+
+    &-data {
+      display: flex;
+      font-size: 14px;
+
+      @include mq(959px) {
+        flex-direction: column;
+        font-size: 12px;
+        width: 100%;
+      }
+
+      &-company {
+        display: flex;
+
+        @include mq(1199px) {
+          @include mq(960px, min) {
+            flex-direction: column;
+          }
+        }
+
+        @include mq(959px) {
+          justify-content: space-between;
+        }
+
+        @include mq(719px) {
+          justify-content: unset;
+          flex-direction: column;
+        }
+
+        &__name {
+          color: #FFF;
+          transition: .3s;
+
+          &:hover {
+            color: $whiteHover;
+          }
+        }
+
+        &__address {
+          margin-left: 50px;
+
+          @include mq(1199px) {
+            margin: 0;
+          }
+
+          @include mq(719px) {
+            margin-top: 11px;
+            font-size: 11.5px;
+          }
+        }
+      }
+
+      &-contacts {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+
+        @include mq(959px) {
+          margin: 16px 0 0;
+        }
+
+        @include mq(719px) {
+          flex-direction: column;
+          align-items: baseline;
+          margin-top: 11px;
+        }
+
+        &__phone {
+          color: #FFF;
+          transition: .3s;
+
+          &:hover {
+            color: $whiteHover;
+          }
+        }
+
+        &__email {
+          color: #FFF;
+          margin-left: 50px;
+          transition: .3s;
+
+          @include mq(719px) {
+            margin-left: 0;
+            margin-top: 11px;
+          }
+
+          &:hover {
+            color: $whiteHover;
+          }
+        }
+      }
+    }
+
+    &-socials {
+      position: absolute;
+      right: 0;
+      bottom: 25px;
+      display: flex;
+      align-items: center;
+
+      @include mq(959px) {
+        bottom: 17px;
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+
+        & + & {
+          margin-left: 25px;
+        }
+
+        path {
+          transition: .3s;
+        }
+
+        &:hover {
+          path {
+            fill: $whiteHover;
+          }
+        }
+      }
+    }
+  }
+
+  &-tablet-menu {
+    padding: 15px 0 0;
+    display: flex;
+    border-top: 1px solid #438CC4;
+
+    @include mq(960px, min) {
+      display: none;
+    }
+
+    &-item {
+      & + & {
+        margin-left: 120px;
+
+        @include mq(719px) {
+          margin-left: 50px;
+        }
+      }
+
+      &__subitem {
+        color: #FFF;
+        display: block;
+        transition: .3s;
+
+        & + & {
+          margin-top: 15px;
+        }
+
+        &:hover {
+          color: $whiteHover;
+        }
+      }
+    }
+  }
+}
