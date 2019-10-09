@@ -213,7 +213,9 @@ a {
   }
 
   &--projects-slider {
-    max-width: 55%;
+    @include mq(720px, min) {
+      max-width: 55%;
+    }
   }
 }
 

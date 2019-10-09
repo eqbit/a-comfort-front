@@ -75,6 +75,11 @@
           transition: .3s;
           height: 6px;
           display: flex;
+          transform: rotate(180deg);
+
+          path {
+            transition: .3s;
+          }
 
           @include mq(719px) {
             left: 10px;
@@ -83,7 +88,7 @@
 
         &.active {
           .catalog-category-filter-item-head__arrow {
-            transform: rotate(180deg);
+            transform: rotate(0deg);
           }
         }
 
@@ -111,6 +116,13 @@
         }
 
         &:hover {
+          .catalog-category-filter-item-head__arrow {
+            svg {
+              path {
+                stroke: $primaryHover;
+              }
+            }
+          }
           .catalog-category-filter-item-head__img {
             svg {
               line {
@@ -193,6 +205,7 @@
         width: 16px;
         height: 16px;
         transition: .3s;
+        z-index: 1;
 
         input[type=checkbox] {
           margin: 0;
@@ -293,21 +306,31 @@
       color: #222;
       transition: .3s;
 
-      &:hover {
-        color: $primaryHover;
+      path {
+        transition: .3s;
       }
 
       &__arrow {
         display: flex;
         align-items: center;
-        transform: rotate(180deg);
         margin-right: 12px;
         transition: .3s;
+        transform: none;
+      }
+
+      &:hover {
+        color: $primaryHover;
+
+        svg {
+          path {
+            stroke: $primaryHover;
+          }
+        }
       }
 
       &.active {
         .catalog-category-filter-more-filters__arrow {
-          transform: none;
+          transform: rotate(180deg);
         }
       }
     }
@@ -319,8 +342,18 @@
       color: #222;
       transition: .3s;
 
+      path {
+        transition: .3s;
+      }
+
       &:hover {
         color: $primaryHover;
+
+        svg {
+          path {
+            stroke: $primaryHover;
+          }
+        }
       }
 
       &__arrow {

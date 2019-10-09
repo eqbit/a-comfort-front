@@ -1,0 +1,44 @@
+.projects-title {
+
+    width: 52%;
+
+    @include mq(1539px, max) {
+        width: 75%
+    }
+
+    @include mq(1199px, max) {
+        width: 90%
+    }
+
+    @include mq(719px, max) {
+        width: 73%
+    }
+
+    &__title {
+
+        margin-top: 48px;
+
+        @include mq(959px, max) {
+            text-align: left;
+        }
+
+        @include mq(719px, max) {
+            margin-top: 42px;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 16px;
+        font-size: 24px;
+
+        @include mq(959px, max) {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        @include mq(719px, max) {
+            margin-top: 25px;
+            font-size: 12px;
+        }
+    }
+}

@@ -1,73 +1,82 @@
+@import "../colors";
+@import "../mixins";
+
 ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .bread-crum {
-    background: #2B5BA4;
-    // max-height: 70px;
-    &--prev {
-        height: 50px;
-        max-height: 100%;
-        // display: flex;
-        align-items: center;
-        display: none;
-        @include mq(959px, max) {
-            display: flex;
-        }
-        &__icon{
-            transform: rotate(90deg);
-        }
-        &__link {
-            color: #E7FDFE;
-        }
+  background: #2B5BA4;
+  &--prev {
+    height: 50px;
+    max-height: 100%;
+    align-items: center;
+    display: none;
+
+    @include mq(959px, max) {
+      display: flex;
     }
-    &--list  {
-    
+
+    &__icon {
+      transform: rotate(90deg);
+    }
+
+    &__link {
+      color: #E7FDFE;
+    }
+  }
+
+  &--list {
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding-top: 20px;
     padding-bottom: 30px;
+
     @include mq(1199px, max) {
-        padding-bottom: 5px;
+      padding-bottom: 5px;
     }
+
     @include mq(959px, max) {
-        display: none;
+      display: none;
     }
 
-        &--itemElement {
-            position: relative;
-            @include mq(1199px, max) {
-                margin-bottom: 15px;
-            }
-            &:hover .bread-crum--list--itemElement__item {
-                color: #45E0F9;
-                &:last-child {
-                    color: red;
-                }
-            }
-            &:last-child {
-                pointer-events: none;
-                opacity: .6;
-            }
-            &::after {
-                content: '/';
-                color: #fff;
-                margin-left: 15px;
-                margin-right: 15px;
-                
-            }
-            &:last-of-type::after {
-                display: none;
-            }
+    &--itemElement {
+      position: relative;
 
-            &__item {
-                font-size: 14px;
-                color: #E7FDFE;
-                transition: all 0.4s;
-            }
+      @include mq(1199px, max) {
+        margin-bottom: 15px;
+      }
+
+      &:hover .bread-crum--list--itemElement__item {
+        color: $whiteHover;
+        &:last-child {
+          color: red;
         }
+      }
+      &:last-child {
+        pointer-events: none;
+        opacity: .6;
+      }
+      &::after {
+        content: '/';
+        color: #fff;
+        margin-left: 15px;
+        margin-right: 15px;
+
+      }
+      &:last-of-type::after {
+        display: none;
+      }
+
+      &__item {
+        font-size: 14px;
+        color: #E7FDFE;
+        transition: all 0.4s;
+      }
     }
+  }
 }

@@ -53,6 +53,11 @@
 
   &-carousel {
     margin-bottom: -20px;
+
+    &:not(.slick-initialized) {
+      display: flex;
+      justify-content: space-between;
+    }
     
     &-item {
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.051);

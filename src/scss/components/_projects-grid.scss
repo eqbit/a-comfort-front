@@ -1,3 +1,32 @@
 .projects-grid {
-    
+    margin-top: 46px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mq(959px,max) {
+        margin-top: 40px;  
+    }
+
+    @include mq(719px,max) {
+        margin-top: 30px;  
+    }
+
+    &__item {
+        margin-bottom: 30px;
+        flex-basis: calc(50% - 15px);
+        // width: calc(50% - 15px);
+        @include mq(1199px,max) {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+        }
+
+        @include mq(959px,max) {
+            margin-bottom: 16px;  
+        }
+
+        @include mq(719px,max) {
+            margin-bottom: 10px;  
+        }
+    }
 }

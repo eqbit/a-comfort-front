@@ -10,7 +10,7 @@
                 @@include('../components/basket-item.html')
             </ul>
         </div>
-        <div class="basket-area__total-side">
+        <form class="basket-area__total-side">
             <div class="basket-area__total-side--info">
                 <div class="basket-area__total-side--info-gds">
                     <p>
@@ -29,13 +29,10 @@
                     </span>
                 </div>
                 <div class="basket-area__total-side--info-privacy">
-                    <!-- <a href="#policy" data-fancybox>
-                                Согласие с <br><span>политикой сбора информации</span>
-                            </a>-->
-                    <label for="box @@name">
+                    <label for="box">
                         <div class="catalog-category-filter-checkbox-box-parent @@extra-classes">
                             <div class="catalog-category-filter-checkbox-box">
-                                <input type="checkbox" value="@@name" id="box @@name">
+                                <input type="checkbox" value="" id="box" required>
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10.179" height="7.159"
                                         viewBox="0 0 10.179 7.159">
@@ -54,7 +51,7 @@
                     </a>
                 </div>
             </div>
-            <button class="basket-area__total-side--btn-order">
+            <button class="basket-area__total-side--btn-order" type="submit">
                 Оформить заказ
                 <svg xmlns="http://www.w3.org/2000/svg" width="6.397" height="13.794" viewBox="0 0 6.397 13.794">
                     <path id="Path_128" data-name="Path 128" d="M-741.984-16.834l5.5,4,5.5-4"
@@ -62,7 +59,7 @@
                         stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
                 </svg>
             </button>
-        </div>
+        </form>
     </div>
     <div class="margin-row">
     </div>

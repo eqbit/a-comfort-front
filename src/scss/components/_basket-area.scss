@@ -14,11 +14,6 @@
         width: calc(100% / 12 * 8);
         max-width: 100%;
 
-        // @include mq(1199px, max) {
-        //     width: calc(100% / 12 * 8);
-        //     max-width: 100%;
-        // }
-
         @include mq(959px, max) {
             width: 100%;
         }
@@ -125,7 +120,7 @@
             background: #FFA200;
             cursor: pointer;
             transition: all 0.4s;
-            box-shadow: rgb(150, 149, 149) 0px 15px 30px -18px;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.051);
 
             @include mq(1199px, max) {
                 font-size: 16px;
@@ -133,7 +128,6 @@
 
             &:hover {
                 background: #BF7900;
-                box-shadow: rgba(150, 149, 149, 0) 0px 0px 0px 0px;
             }
 
             & svg {

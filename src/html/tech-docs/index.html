@@ -1,0 +1,25 @@
+@@include('../components/header.html')
+
+<div class="header-title-wrap">
+    <div class="container">
+        <div class="header-title">
+            <h1 class="header-title__title">Техническая документация</h1>
+            <div class="header-title__subtitle">Найдите техническую документацию и сертификаты по артикулу, названию котла или бренду</div>
+        </div>
+    </div>
+</div>
+
+@@include('../components/header-search.html', {
+"placeholder": "Поиск запчастей",
+"extra-classes": "header-search--catalog-detail"
+})
+
+@@include('../components/brands-row.html')
+
+<div class="block-margin"></div>
+
+@@include('../components/tech-docs-grid.html')
+
+<div class="block-margin"></div>
+
+@@include('../components/footer.html')

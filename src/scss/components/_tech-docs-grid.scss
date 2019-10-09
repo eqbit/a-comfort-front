@@ -1,0 +1,38 @@
+.tech-docs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    margin: 0px -15px -30px -15px;
+
+    @include mq(1199px, max) {
+        margin: 0px -10px 0px -10px;
+    }
+
+    @include mq(959px, max) {
+        margin-top: 0px;
+    }
+
+    @include mq(719px, max) {
+        margin: 0px 0px 0px 0px;
+    }
+
+    &>div {
+        width: calc(25% - 30px);
+        margin: 0px 15px 30px 15px;
+
+        @include mq(1199px, max) {
+            width: calc(33% - 20px);
+            margin: 0px 10px 20px 10px;
+        }
+
+        @include mq(959px, max) {
+            width: calc(50% - 16px);
+            margin: 0px 8px 16px 8px;
+        }
+
+        @include mq(719px, max) {
+            width: 100%;
+            margin: 0px 15px 10px 15px;
+        }
+    }
+}

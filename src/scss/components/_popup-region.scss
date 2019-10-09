@@ -1,0 +1,125 @@
+@import "../colors";
+@import "../mixins";
+
+.popup-region {
+
+  display: none;
+  position: relative;
+  z-index: 101;
+
+  &__wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 105;
+    background: rgba(2, 8, 62, 0.925);
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    color: #fff;
+    text-align: center;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include mqh(600px) {
+      height: 85%;
+    }
+
+    @include mq(959px) {
+      height: 65%;
+    }
+
+    @include mq(719px) {
+      height: 70%;
+    }
+  }
+  &__title {
+    margin-top: 26px;
+    font-size: 40px;
+    @include mq(959px) {
+      font-size: 24px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+    margin-top: 54px;
+    transition: all 0.4s;
+    font-size: 24px;
+
+    a {
+      transition: .3s;
+    }
+
+    &:hover a {
+      color: $whiteHover;
+    }
+
+    @include mq(959px) {
+      font-size: 18px;
+      margin-top: 24px;
+    }
+
+    @include mq(719px) {
+      font-size: 14px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:before {
+      display: none;
+    }
+
+    & a {
+      color: #fff;
+    }
+  }
+
+  &__close-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn-close {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 246px;
+    padding: 18px 0px;
+    border-radius: 6px;
+
+    @include mq(1199px) {
+      width: 220px;
+    }
+
+    @include mq(959px) {
+      width: 190px;
+    }
+
+    @include mq(719px) {
+
+    }
+
+    &:hover {
+      background: #fff;
+      color: rgb(2, 8, 62);
+    }
+
+  }
+}

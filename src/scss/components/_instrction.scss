@@ -1,0 +1,79 @@
+.instruction {
+    box-sizing: border-box;
+
+    &__link-wrap {
+        display: block;
+        padding: 20px 20px 40px 20px;
+        border: 1px solid #E6E6E6;
+        color: #000;
+        border-radius: 6px;
+        transition: all 0.4s;
+
+        @include mq(1539px, max) {
+            padding: 22px 17px 30px 17px;
+        }
+
+        @include mq(959px, max) {
+            margin: 0 auto;
+        }
+
+        @include mq(719px, max) {
+            padding: 22px 23px 30px 22px;
+        }
+
+        &:hover {
+            box-shadow: rgb(150, 149, 149) 0px 12px 20px -20px;
+        }
+
+    }
+
+    &__tech-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+
+    &__doc-type {
+
+        display: flex;
+
+        & i {
+
+        }
+
+        & p {
+            margin-left: 14px;
+            opacity: .6;
+        }
+    }
+
+    &__size-wrap {
+        opacity: .6;
+    }
+
+    &__description {
+        margin-top: 32px;
+        
+
+        @include mq(1539px, max) {
+            margin-top: 22px;
+        }
+
+        @include mq(1199px, max) {
+
+        }
+
+        &-text {
+            margin: 0;
+            padding: 0;
+
+            @include mq(959px, max) {
+                font-size: 14px;
+                width: 80%;
+            }
+            @include mq(719px, max) {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -7,14 +7,64 @@
 
   &-form {
     padding: 60px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    // display: flex;
+
+    &__wrap {
+      // width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include mq(959px) {
+        flex-direction: column;
+        align-items: unset;
+        // padding: 30px 0 40px;
+      }
+    }
 
     @include mq(959px) {
-      flex-direction: column;
-      align-items: unset;
+      // flex-direction: column;
+      // align-items: unset;
       padding: 30px 0 40px;
+    }
+
+    &__success-message {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      @include mq(959px) {
+        justify-content: flex-start;
+      }
+
+      &>div {
+        display: flex;
+        align-items: center;
+
+        @include mq(1199px) {
+          font-size: 14px;
+        }
+
+        @include mq(959px) {
+          padding-top: 15px;
+        }
+
+        @include mq(359px) {
+          font-size: 12px;
+        }
+
+      }
+      & svg {
+        margin-left: 46px;
+
+        @include mq(1199px) {
+          margin-left: 26px;
+        }
+
+        @include mq(479px) {
+          margin-left: 16px;
+        }
+      }
     }
 
     &__title {
@@ -41,6 +91,25 @@
       margin-left: 160px;
       position: relative;
 
+      &-error {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background: #FFF5F5;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        color: #444444;
+        padding: 17px 24px;
+        font-size: 16px;
+
+        span {
+          margin-left: 24px;
+        }
+      }
+
+
       @include mq(1539px) {
         margin-left: 80px;
       }
@@ -57,13 +126,14 @@
 
       &__itself {
         width: 100%;
-        padding: 19px 160px 19px 34px;
+        padding: 19px 160px 17px 34px;
         font-size: 16px;
         border-radius: 5px;
-        border: none;
+        border: 1px solid transparent;
+        background: #E2F2FC;
 
         @include mq(719px) {
-          padding: 17px 104px 17px 15px;
+          padding: 17px 104px 15px 15px;
           font-size: 14px;
         }
       }
@@ -117,8 +187,7 @@
 
       &__subitem {
         display: block;
-        color: #FFF;
-        opacity: .65;
+        color: rgba(white, .65);
         margin-top: 6px;
         transition: .3s;
         font-size: 14px;
@@ -346,4 +415,8 @@
       }
     }
   }
+}
+
+.error input {
+  border-color: red;
 }

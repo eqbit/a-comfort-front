@@ -45,3 +45,8 @@ $validation.on('change input keypressed', function() {
 $validation.on('blur', function() {
   validate($(this), true);
 });
+
+$('[type=tel]').inputmask({
+  mask: '+7(999)999-99-99',
+  showMaskOnHover: false
+})

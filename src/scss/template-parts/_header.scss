@@ -28,30 +28,16 @@
       display: flex;
       align-items: center;
 
-      &__text {
-        color: #FFF;
-        font-size: 20px;
-        line-height: 23px;
-        margin-left: 16px;
-
-        @include mq(959px) {
-          font-size: 16px;
-          line-height: 20px;
-        }
+      @include mq(959px) {
+        width: 152px;
       }
 
-      svg {
-        overflow: visible;
+      @include mq(719px) {
+        width: 121px;
       }
 
-      circle {
-        transition: 1s;
-      }
-
-      &:hover {
-        circle {
-          transform: scale(1.05) translateX(-2.5%) translateY(-2.5%);
-        }
+      img {
+        max-width: 100%;
       }
 
       @include mq(1200px, min) {
@@ -234,27 +220,6 @@
       display: flex;
       align-items: center;
       text-decoration: none;
-
-      &__text {
-        font-size: 20px;
-        color: #FFF;
-        line-height: 23px;
-        margin-left: 16px;
-      }
-
-      svg {
-        overflow: visible;
-      }
-
-      path:first-child {
-        transition: 1s;
-      }
-
-      &:hover {
-        path:first-child {
-          transform: scale(1.05) translateX(-2.5%) translateY(-2.5%);
-        }
-      }
     }
 
     &-menu {
@@ -275,6 +240,10 @@
 
         &:hover {
           color: $whiteHover;
+        }
+
+        &.active {
+          color: $activeMenu;
         }
 
         @include mq(1539px) {
