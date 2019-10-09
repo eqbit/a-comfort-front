@@ -14,11 +14,15 @@ $(function () {
     if (!isMobile()) {
       $this.toggleClass('active').next().slideToggle();
     } else {
-      if(!$this.is('.active')) {
-        $filterGroupHead.removeClass('active').next().hide();
-        $this.addClass('active').next().slideDown();
+      if(isTablet()) {
+        $this.toggleClass('active').next().slideToggle();
       } else {
-        $filterGroupHead.removeClass('active').next().slideUp();
+        if(!$this.is('.active')) {
+          $filterGroupHead.removeClass('active').next().hide();
+          $this.addClass('active').next().slideDown();
+        } else {
+          $filterGroupHead.removeClass('active').next().slideUp();
+        }
       }
     }
   });

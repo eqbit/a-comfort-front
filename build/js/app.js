@@ -20,6 +20,10 @@ var isMobile = function isMobile() {
   return $(window).outerWidth() < 960;
 };
 
+var isTablet = function isTablet() {
+  return $(window).outerWidth() < 960 && $(window).outerWidth() > 719;
+};
+
 var validators = {
   phone: function phone(_phone) {
     var regExp = /^[+\d][\d\(\)\ -]{4,14}\d$/;
@@ -68,133 +72,180 @@ $('[type=tel]').inputmask({
 });
 "use strict";
 
-if (document.querySelectorAll(".basket-area").length) {
-  var getGoods = function getGoods() {
-    state.goods = itemsPrice.length;
+$(function () {
+  if ($(".basket-area").length) {
+    var $buttonPlus = $('[data-item-plus]'),
+        $buttonMinus = $('[data-item-minus]'),
+        $buttonRemove = $('[data-item-remove]');
 
-    switch (state.goods) {
-      case 1:
-        goods.text(state.goods + ' товар');
-        break;
+    var getTotal = function getTotal() {
+      var total = 0;
+      $('[data-initial]').map(function (idx, item) {
+        total += $(item).data('quantity') * $(item).data('initial');
+      });
+      return total;
+    };
 
-      case 0:
-        goods.text(state.goods + ' товаров');
-        break;
+    var getTotalItems = function getTotalItems() {
+      var total = 0;
+      $('[data-initial]').map(function (idx, item) {
+        total += $(item).data('quantity');
+      });
+      return total;
+    };
 
-      default:
-        goods.text(state.goods + ' товара');
-    }
-  };
+    var getTheWord = function getTheWord(n) {
+      var text_forms = ['товар', 'товара', 'товаров'];
+      n = Math.abs(n) % 100;
+      var n1 = n % 10;
 
-  var getInitialPrice = function getInitialPrice() {
-    var arrPrice = [];
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = itemsPrice[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var item = _step.value;
-        var initial = parseInt(item.innerText.replace(/\s+/g, ''));
-        arrPrice.push(initial);
+      if (n > 10 && n < 20) {
+        return text_forms[2];
       }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-          _iterator["return"]();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
+
+      if (n1 > 1 && n1 < 5) {
+        return text_forms[1];
       }
-    }
 
-    return arrPrice;
-  };
-
-  var getSum = function getSum() {
-    itemsPrice = $('.basket-area__goods-item--quantity-price');
-    state.total = 0;
-    getGoods();
-
-    if (itemsPrice.length) {
-      var _iteratorNormalCompletion2 = true;
-      var _didIteratorError2 = false;
-      var _iteratorError2 = undefined;
-
-      try {
-        for (var _iterator2 = itemsPrice[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var price = _step2.value;
-          var itemContent = parseInt(price.textContent.replace(/\s+/g, ''));
-          state.total += itemContent;
-          document.querySelector('.basket-area__total-side--info-price span').textContent = state.total.toLocaleString() + " ₽";
-        }
-      } catch (err) {
-        _didIteratorError2 = true;
-        _iteratorError2 = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-            _iterator2["return"]();
-          }
-        } finally {
-          if (_didIteratorError2) {
-            throw _iteratorError2;
-          }
-        }
+      if (n1 == 1) {
+        return text_forms[0];
       }
-    } else {
-      document.querySelector('.basket-area__total-side--info-price span').textContent = 0 + " ₽";
-    }
-  };
 
-  var itemsPrice = $('.basket-area__goods-item--quantity-price');
-  var btnsUp = $('.quantity-changer__btn_up');
-  var btnsDown = $('.quantity-changer__btn_down');
-  var goods = $('.basket-area__total-side--info-gds span');
-  var state = {
-    total: 0,
-    goods: 0,
-    initialPrice: getInitialPrice()
-  };
-  btnsUp.on('click', function () {
-    var $this = $(this);
-    var initial = $this.closest(".basket-area__goods-item").attr('data-initial');
-    var data = parseInt($this.siblings('.quantity-changer__total').text()) + 1;
-    $this.siblings('.quantity-changer__total').text(data);
-    var parent = $this.closest('.basket-area__goods-item--quantity');
-    var price = $(parent).children('.basket-area__goods-item--quantity-price');
-    var temp = price.text(initial * data);
-    var fin = parseInt(temp.text(), 10);
-    price.text(fin.toLocaleString() + " ₽");
-    getSum(price.text());
-  });
-  btnsDown.on('click', function () {
-    var $this = $(this);
-    var initial = $this.closest(".basket-area__goods-item").attr('data-initial');
-    var data = parseInt($this.siblings('.quantity-changer__total').text()) - 1;
+      return text_forms[2];
+    };
 
-    if (data >= 1) {
-      $this.siblings('.quantity-changer__total').text(data);
-      var parent = $this.closest('.basket-area__goods-item--quantity');
-      var price = $(parent).children('.basket-area__goods-item--quantity-price');
-      var temp = parseInt(price.text().replace(/\s+/g, ''), 10);
-      price.text((temp - initial).toLocaleString() + " ₽");
-      getSum();
-    }
-  });
-  var $removeItem = $('[data-remove-item]');
-  $removeItem.on('click', function () {
-    var $this = $(this);
-    $this.closest('.basket-area__goods-item').remove();
-    getSum();
-  });
-  getSum();
-}
+    var renewDigits = function renewDigits() {
+      var total = getTotal();
+      var $visualTotal = $('[data-visual-total]');
+      $visualTotal.text(total.toLocaleString('ru-RU') + ' ₽');
+      var $totalItems = $('[data-total-items]'),
+          itemsQuantity = getTotalItems();
+      $totalItems.text(itemsQuantity + ' ' + getTheWord(itemsQuantity));
+    };
+
+    $buttonPlus.on('click', function () {
+      var $item = $(this).closest('[data-initial]'),
+          quantity = $item.data('quantity') + 1,
+          singleItemPrice = $item.data('initial');
+      $item.data('quantity', quantity);
+      $item.find('[data-total-goods]').text(quantity);
+      $item.find('[data-price]').text((quantity * singleItemPrice).toLocaleString('ru-RU') + ' ₽');
+      renewDigits();
+    });
+    $buttonMinus.on('click', function () {
+      var $item = $(this).closest('[data-initial]'),
+          quantity = $item.data('quantity') - 1,
+          singleItemPrice = $item.data('initial');
+
+      if (quantity > 0) {
+        $item.data('quantity', quantity);
+        $item.find('[data-total-goods]').text(quantity);
+        $item.find('[data-price]').text((quantity * singleItemPrice).toLocaleString('ru-RU') + ' ₽');
+        renewDigits();
+      }
+    });
+    $buttonRemove.on('click', function () {
+      var $item = $(this).closest('[data-initial]');
+      $item.remove();
+      renewDigits();
+    });
+  }
+}); //
+// if (document.querySelectorAll(".basket-area").length) {
+//
+//     let itemsPrice = $('.basket-area__goods-item--quantity-price');
+//     let btnsUp = $('.quantity-changer__btn_up');
+//     let btnsDown = $('.quantity-changer__btn_down');
+//     let goods = $('.basket-area__total-side--info-gds span');
+//
+//     const state = {
+//         total: 0,
+//         goods: 0,
+//         initialPrice: getInitialPrice(),
+//     }
+//
+//     function getGoods() {
+//         state.goods = itemsPrice.length;
+//         switch(state.goods) {
+//             case 1:
+//                 goods.text(state.goods + ' товар')
+//                 break;
+//             case 0:
+//                 goods.text(state.goods + ' товаров')
+//                 break;
+//             default:
+//                 goods.text(state.goods + ' товара')
+//         }
+//
+//     }
+//
+//     function getInitialPrice() {
+//         let arrPrice = [];
+//         for (let item of itemsPrice) {
+//             let initial = parseInt(item.innerText.replace(/\s+/g, ''));
+//             arrPrice.push(initial);
+//         }
+//
+//         return arrPrice;
+//     }
+//
+//     btnsUp.on('click', function () {
+//         let $this = $(this);
+//         let initial = $this.closest(".basket-area__goods-item").attr('data-initial');
+//         let data = parseInt($this.siblings('.quantity-changer__total').text()) + 1;
+//         $this.siblings('.quantity-changer__total').text(data);
+//         let parent = $this.closest('.basket-area__goods-item--quantity')
+//         let price = $(parent).children('.basket-area__goods-item--quantity-price')
+//
+//         let temp = price.text(initial * data);
+//         let fin = parseInt(temp.text(),10)
+//         price.text(fin.toLocaleString() + " ₽")
+//         getSum(price.text());
+//     })
+//
+//     btnsDown.on('click', function () {
+//         let $this = $(this);
+//         let initial = $this.closest(".basket-area__goods-item").attr('data-initial');
+//         let data = parseInt($this.siblings('.quantity-changer__total').text()) - 1;
+//         if (data >= 1) {
+//             $this.siblings('.quantity-changer__total').text(data);
+//             let parent = $this.closest('.basket-area__goods-item--quantity')
+//             let price = $(parent).children('.basket-area__goods-item--quantity-price')
+//             let temp = parseInt(price.text().replace(/\s+/g,''), 10);
+//             price.text((temp - initial).toLocaleString() + " ₽");
+//             getSum();
+//         }
+//     })
+//
+//     function getSum() {
+//         itemsPrice = $('.basket-area__goods-item--quantity-price');
+//         state.total = 0;
+//         getGoods();
+//
+//         if (itemsPrice.length) {
+//             for (let price of itemsPrice) {
+//                 let itemContent = parseInt(price.textContent.replace(/\s+/g, ''));
+//                 state.total += itemContent;
+//                 document.querySelector('.basket-area__total-side--info-price span').textContent = state.total.toLocaleString() + " ₽";
+//             }
+//         }
+//         else {
+//             document.querySelector('.basket-area__total-side--info-price span').textContent = 0 + " ₽";
+//         }
+//     }
+//
+//     let $removeItem = $('[data-remove-item]');
+//
+//     $removeItem.on('click', function () {
+//         let $this = $(this);
+//
+//         $this.closest('.basket-area__goods-item').remove();
+//         getSum();
+//
+//     })
+//
+//     getSum()
+// }
 "use strict";
 
 $(function () {
@@ -226,11 +277,15 @@ $(function () {
     if (!isMobile()) {
       $this.toggleClass('active').next().slideToggle();
     } else {
-      if (!$this.is('.active')) {
-        $filterGroupHead.removeClass('active').next().hide();
-        $this.addClass('active').next().slideDown();
+      if (isTablet()) {
+        $this.toggleClass('active').next().slideToggle();
       } else {
-        $filterGroupHead.removeClass('active').next().slideUp();
+        if (!$this.is('.active')) {
+          $filterGroupHead.removeClass('active').next().hide();
+          $this.addClass('active').next().slideDown();
+        } else {
+          $filterGroupHead.removeClass('active').next().slideUp();
+        }
       }
     }
   });

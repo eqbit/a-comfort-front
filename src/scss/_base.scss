@@ -201,7 +201,6 @@ a {
   }
 
   @include mq(959px) {
-    max-width: 70%;
     font-size: 16px;
     line-height: 22px;
   }
@@ -213,8 +212,10 @@ a {
   }
 
   &--projects-slider {
-    @include mq(720px, min) {
-      max-width: 55%;
+    @include mq(959px) {
+      br {
+        display: none;
+      }
     }
   }
 }

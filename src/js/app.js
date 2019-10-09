@@ -1,4 +1,5 @@
 const isMobile = () => $(window).outerWidth() < 960;
+const isTablet = () => $(window).outerWidth() < 960 && $(window).outerWidth() > 719;
 
 let validators = {
   phone: phone => {

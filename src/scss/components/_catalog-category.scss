@@ -51,6 +51,7 @@
         background: #FBF6F1;
         position: relative;
         cursor: pointer;
+        border-radius: 5px;
 
         @include mq(719px) {
           padding-left: 30px;
@@ -387,6 +388,7 @@
     text-decoration: none;
     color: #222;
     transition: .3s;
+    border-radius: 5px;
 
     @include mq(1199px) {
       width: calc(50% - 30px);
@@ -438,7 +440,7 @@
 
     &:hover {
       @include mq(960px, min) {
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.051);
+        box-shadow: 0 23px 10px -15px rgba(0,0,0,0.08);
 
         .catalog-category-item__type {
           opacity: .6;

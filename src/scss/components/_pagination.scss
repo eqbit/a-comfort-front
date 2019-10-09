@@ -6,6 +6,7 @@
   background: #FBF6F1;
   display: flex;
   justify-content: space-between;
+  border-radius: 5px;
 
   @include mq(719px) {
     flex-direction: column;
