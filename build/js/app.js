@@ -343,11 +343,12 @@ $(function () {
   });
   $form.on('submit', function (e) {
     e.preventDefault();
-    $validation.each(function () {
+    var $localValidation = $form.find('[data-validation]');
+    $localValidation.each(function () {
       validate($(this), true);
     });
 
-    if (!$('.required.error').length) {
+    if (!$form.find('.required.error').length) {
       $.ajax({
         url: '/ajax-url',
         data: state,
@@ -408,11 +409,12 @@ $(function () {
       $errorOverlay = $form.find('[data-error-overlay]');
   $form.on('submit', function (e) {
     e.preventDefault();
-    $validation.each(function () {
+    var $localValidation = $form.find('[data-validation]');
+    $localValidation.each(function () {
       validate($(this), true);
     });
 
-    if (!$('.required.error').length) {
+    if (!$form.find('.required.error').length) {
       $.ajax({
         url: '/ajax-url',
         data: $form.serialize(),
@@ -679,12 +681,12 @@ for (var i = 0; i < iconsTop.length; i++) {
   _loop(i);
 }
 
-var _loop2 = function _loop2(i) {
-  $(iconSp[i]).on('click', function () {
-    $(popupSp[i]).fadeIn();
+var _loop2 = function _loop2(_i) {
+  $(iconSp[_i]).on('click', function () {
+    $(popupSp[_i]).fadeIn();
   });
   $(document).mouseup(function (e) {
-    var div = $(popupSp[i]);
+    var div = $(popupSp[_i]);
 
     if (!div.is(e.target) && div.has(e.target).length === 0) {
       div.fadeOut();
@@ -692,8 +694,8 @@ var _loop2 = function _loop2(i) {
   });
 };
 
-for (var i = 0; i < iconSp.length; i++) {
-  _loop2(i);
+for (var _i = 0; _i < iconSp.length; _i++) {
+  _loop2(_i);
 } // $('body').on('click', iconSp[1], function(){
 //     console.log('svg')
 // })

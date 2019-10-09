@@ -4,12 +4,14 @@ $(function() {
   
   $form.on('submit', function (e) {
     e.preventDefault();
-    
-    $validation.each(function () {
+  
+    let $localValidation = $form.find('[data-validation]');
+  
+    $localValidation.each(function () {
       validate($(this), true);
     });
     
-    if (!$('.required.error').length) {
+    if (!$form.find('.required.error').length) {
       $.ajax({
         url: '/ajax-url',
         data: $form.serialize(),
