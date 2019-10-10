@@ -16,6 +16,7 @@
   align-items: stretch;
   z-index: 5;
   transition: all 0.4s;
+  margin-bottom: 20px;
 
   @include mq(1199px, max) {
     flex-basis: calc(100% / 12 * 4);
